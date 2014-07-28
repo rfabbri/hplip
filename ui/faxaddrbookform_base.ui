@@ -1,0 +1,297 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>FaxAddrBookForm_base</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>FaxAddrBookForm_base</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>861</width>
+            <height>358</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>HP Device Manager - Fax Address Book</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QPushButton" row="2" column="8">
+            <property name="name">
+                <cstring>OKButton</cstring>
+            </property>
+            <property name="text">
+                <string>OK</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="2" column="0">
+            <property name="name">
+                <cstring>newButton</cstring>
+            </property>
+            <property name="text">
+                <string>New...</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="2" column="1">
+            <property name="name">
+                <cstring>editButton</cstring>
+            </property>
+            <property name="text">
+                <string>Edit...</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="2" column="2">
+            <property name="name">
+                <cstring>deleteButton</cstring>
+            </property>
+            <property name="text">
+                <string>Delete...</string>
+            </property>
+        </widget>
+        <widget class="QListView" row="1" column="0" rowspan="1" colspan="9">
+            <column>
+                <property name="text">
+                    <string>Nickname</string>
+                </property>
+                <property name="clickable">
+                    <bool>true</bool>
+                </property>
+                <property name="resizable">
+                    <bool>true</bool>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>Title</string>
+                </property>
+                <property name="clickable">
+                    <bool>true</bool>
+                </property>
+                <property name="resizable">
+                    <bool>true</bool>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>First Name</string>
+                </property>
+                <property name="clickable">
+                    <bool>true</bool>
+                </property>
+                <property name="resizable">
+                    <bool>true</bool>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>Last Name</string>
+                </property>
+                <property name="clickable">
+                    <bool>true</bool>
+                </property>
+                <property name="resizable">
+                    <bool>true</bool>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>Fax Number</string>
+                </property>
+                <property name="clickable">
+                    <bool>true</bool>
+                </property>
+                <property name="resizable">
+                    <bool>true</bool>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>Member of Group(s)</string>
+                </property>
+                <property name="clickable">
+                    <bool>true</bool>
+                </property>
+                <property name="resizable">
+                    <bool>true</bool>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>Notes/Other Information</string>
+                </property>
+                <property name="clickable">
+                    <bool>true</bool>
+                </property>
+                <property name="resizable">
+                    <bool>true</bool>
+                </property>
+            </column>
+            <property name="name">
+                <cstring>addressListView</cstring>
+            </property>
+            <property name="midLineWidth">
+                <number>0</number>
+            </property>
+            <property name="selectionMode">
+                <enum>Single</enum>
+            </property>
+            <property name="allColumnsShowFocus">
+                <bool>true</bool>
+            </property>
+            <property name="showSortIndicator">
+                <bool>false</bool>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>textLabel11</cstring>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;Fax Addresses:&lt;/b&gt;</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="2" column="4">
+            <property name="name">
+                <cstring>groupButton</cstring>
+            </property>
+            <property name="text">
+                <string>Groups...</string>
+            </property>
+        </widget>
+        <widget class="Line" row="2" column="3">
+            <property name="name">
+                <cstring>line8</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>VLine</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+        </widget>
+        <widget class="Line" row="2" column="5">
+            <property name="name">
+                <cstring>line8_2</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>VLine</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="2" column="6">
+            <property name="name">
+                <cstring>importPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Import...</string>
+            </property>
+        </widget>
+        <spacer row="2" column="7">
+            <property name="name">
+                <cstring>spacer29</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>300</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>OKButton</sender>
+        <signal>clicked()</signal>
+        <receiver>FaxAddrBookForm_base</receiver>
+        <slot>accept()</slot>
+    </connection>
+    <connection>
+        <sender>newButton</sender>
+        <signal>clicked()</signal>
+        <receiver>FaxAddrBookForm_base</receiver>
+        <slot>newButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>editButton</sender>
+        <signal>clicked()</signal>
+        <receiver>FaxAddrBookForm_base</receiver>
+        <slot>editButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>deleteButton</sender>
+        <signal>clicked()</signal>
+        <receiver>FaxAddrBookForm_base</receiver>
+        <slot>deleteButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>addressListView</sender>
+        <signal>rightButtonClicked(QListViewItem*,const QPoint&amp;,int)</signal>
+        <receiver>FaxAddrBookForm_base</receiver>
+        <slot>addressListView_rightButtonClicked(QListViewItem*,const QPoint&amp;,int)</slot>
+    </connection>
+    <connection>
+        <sender>addressListView</sender>
+        <signal>currentChanged(QListViewItem*)</signal>
+        <receiver>FaxAddrBookForm_base</receiver>
+        <slot>addressListView_currentChanged(QListViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>addressListView</sender>
+        <signal>doubleClicked(QListViewItem*)</signal>
+        <receiver>FaxAddrBookForm_base</receiver>
+        <slot>addressListView_doubleClicked(QListViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>groupButton</sender>
+        <signal>clicked()</signal>
+        <receiver>FaxAddrBookForm_base</receiver>
+        <slot>groupButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>importPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>FaxAddrBookForm_base</receiver>
+        <slot>importPushButton_clicked()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>addressListView</tabstop>
+    <tabstop>newButton</tabstop>
+    <tabstop>editButton</tabstop>
+    <tabstop>deleteButton</tabstop>
+    <tabstop>groupButton</tabstop>
+    <tabstop>OKButton</tabstop>
+</tabstops>
+<includes>
+    <include location="local" impldecl="in implementation">faxaddrbookform_base.ui.h</include>
+</includes>
+<slots>
+    <slot>newButton_clicked()</slot>
+    <slot>editButton_clicked()</slot>
+    <slot>deleteButton_clicked()</slot>
+    <slot>addressListView_rightButtonClicked( QListViewItem *, const QPoint &amp;, int )</slot>
+    <slot>addressListView_currentChanged( QListViewItem * )</slot>
+    <slot>addressListView_doubleClicked( QListViewItem * )</slot>
+    <slot>groupButton_clicked()</slot>
+    <slot>importPushButton_clicked()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

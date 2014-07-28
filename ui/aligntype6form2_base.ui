@@ -1,0 +1,75 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>AlignType6Form2_base</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>AlignType6Form2_base</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>626</width>
+            <height>211</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>HP Device Manager - Alignment</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>textLabel1</cstring>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;Follow these steps to complete the alignment:&lt;/b&gt;
+&lt;p&gt;&lt;b&gt;1.&lt;/b&gt; Place the alignment page, with the printed side facing down, on the scanner.
+&lt;p&gt;&lt;b&gt;2.&lt;/b&gt; Press the &lt;i&gt;Enter&lt;/i&gt; or &lt;i&gt;Scan&lt;/i&gt; button on the printer.
+&lt;p&gt;&lt;b&gt;3.&lt;/b&gt; "Alignment Complete" will be displayed when the process is finished (on some models)..</string>
+            </property>
+            <property name="textFormat">
+                <enum>RichText</enum>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="1" column="1">
+            <property name="name">
+                <cstring>pushButton4</cstring>
+            </property>
+            <property name="text">
+                <string>OK</string>
+            </property>
+        </widget>
+        <spacer row="1" column="0">
+            <property name="name">
+                <cstring>spacer3</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>581</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>pushButton4</sender>
+        <signal>clicked()</signal>
+        <receiver>AlignType6Form2_base</receiver>
+        <slot>accept()</slot>
+    </connection>
+</connections>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

@@ -1,0 +1,145 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>FaxAddrBookGroupEditForm_base</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>FaxAddrBookGroupEditForm_base</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>377</width>
+            <height>359</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>HP Device Manager - Fax Address Book Group</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLabel" row="0" column="0">
+            <property name="name">
+                <cstring>textLabel8</cstring>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;Group Name:&lt;/b&gt;</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="2" column="0" rowspan="1" colspan="4">
+            <property name="name">
+                <cstring>textLabel9</cstring>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;Member Address Book Entries:&lt;/b&gt;</string>
+            </property>
+        </widget>
+        <widget class="QListView" row="3" column="0" rowspan="1" colspan="4">
+            <column>
+                <property name="text">
+                    <string>Group Members</string>
+                </property>
+                <property name="clickable">
+                    <bool>true</bool>
+                </property>
+                <property name="resizable">
+                    <bool>true</bool>
+                </property>
+            </column>
+            <property name="name">
+                <cstring>entriesListView</cstring>
+            </property>
+            <property name="selectionMode">
+                <enum>NoSelection</enum>
+            </property>
+        </widget>
+        <widget class="QLineEdit" row="0" column="1" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>groupnameEdit</cstring>
+            </property>
+        </widget>
+        <widget class="Line" row="1" column="0" rowspan="1" colspan="4">
+            <property name="name">
+                <cstring>line11</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>HLine</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="4" column="3">
+            <property name="name">
+                <cstring>okButton</cstring>
+            </property>
+            <property name="text">
+                <string>OK</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="4" column="2">
+            <property name="name">
+                <cstring>cancelButton</cstring>
+            </property>
+            <property name="text">
+                <string>Cancel</string>
+            </property>
+        </widget>
+        <spacer row="4" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>spacer36</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>150</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>okButton</sender>
+        <signal>clicked()</signal>
+        <receiver>FaxAddrBookGroupEditForm_base</receiver>
+        <slot>accept()</slot>
+    </connection>
+    <connection>
+        <sender>cancelButton</sender>
+        <signal>clicked()</signal>
+        <receiver>FaxAddrBookGroupEditForm_base</receiver>
+        <slot>reject()</slot>
+    </connection>
+    <connection>
+        <sender>groupnameEdit</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>FaxAddrBookGroupEditForm_base</receiver>
+        <slot>groupnameEdit_textChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>entriesListView</sender>
+        <signal>clicked(QListViewItem*)</signal>
+        <receiver>FaxAddrBookGroupEditForm_base</receiver>
+        <slot>entriesListView_clicked(QListViewItem*)</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">faxaddrbookgroupeditform_base.ui.h</include>
+</includes>
+<slots>
+    <slot>groupnameEdit_textChanged( const QString &amp; )</slot>
+    <slot>entriesListView_clicked( QListViewItem * )</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

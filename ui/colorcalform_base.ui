@@ -1,0 +1,176 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>ColorCalForm_base</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>ColorCalForm_base</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>610</width>
+            <height>220</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>HP Device Manager - Color Calibration</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QPushButton" row="1" column="3">
+            <property name="name">
+                <cstring>ContinueButton</cstring>
+            </property>
+            <property name="text">
+                <string>Next &gt;</string>
+            </property>
+        </widget>
+        <spacer row="1" column="1">
+            <property name="name">
+                <cstring>spacer1</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>335</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QPushButton" row="1" column="2">
+            <property name="name">
+                <cstring>CancelButton</cstring>
+            </property>
+            <property name="text">
+                <string>Cancel</string>
+            </property>
+        </widget>
+        <widget class="QButtonGroup" row="0" column="0" rowspan="1" colspan="4">
+            <property name="name">
+                <cstring>ColorCalGroup</cstring>
+            </property>
+            <property name="title">
+                <string>Color Calibration</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget" row="1" column="0">
+                    <property name="name">
+                        <cstring>layout2</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton12</cstring>
+                            </property>
+                            <property name="text">
+                                <string>1</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton13</cstring>
+                            </property>
+                            <property name="text">
+                                <string>2</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton14</cstring>
+                            </property>
+                            <property name="text">
+                                <string>3</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton15</cstring>
+                            </property>
+                            <property name="text">
+                                <string>4</string>
+                            </property>
+                            <property name="checked">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton16</cstring>
+                            </property>
+                            <property name="text">
+                                <string>5</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton17</cstring>
+                            </property>
+                            <property name="text">
+                                <string>6</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton18</cstring>
+                            </property>
+                            <property name="text">
+                                <string>7</string>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>textLabel2_2</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Choose the numbered image labeled "1" thru "7" that is &lt;b&gt;best color matched&lt;/b&gt; to the image labeled "X".</string>
+                    </property>
+                    <property name="alignment">
+                        <set>WordBreak|AlignVCenter</set>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>CancelButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ColorCalForm_base</receiver>
+        <slot>reject()</slot>
+    </connection>
+    <connection>
+        <sender>ContinueButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ColorCalForm_base</receiver>
+        <slot>accept()</slot>
+    </connection>
+    <connection>
+        <sender>ColorCalGroup</sender>
+        <signal>clicked(int)</signal>
+        <receiver>ColorCalForm_base</receiver>
+        <slot>ColorCalGroup_clicked(int)</slot>
+    </connection>
+</connections>
+<slots>
+    <slot>buttonGroup2_clicked( int )</slot>
+    <slot>ColorCalGroup_released( int )</slot>
+    <slot>ColorCalGroup_clicked( int )</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

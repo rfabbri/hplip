@@ -1,0 +1,66 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>Align13Form_Base</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>Align13Form_base</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>600</width>
+            <height>232</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>HP Device Manager - Align Print Cartridges</string>
+    </property>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>30</x>
+                <y>20</y>
+                <width>540</width>
+                <height>140</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'DejaVu Sans'; font-size:10pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;&lt;span style=" font-weight:600;"&gt;Follow these steps to complete the alignment:&lt;/span&gt; &lt;/p&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;&lt;span style=" font-weight:600;"&gt;1.&lt;/span&gt; Place the alignment page, with the printed side facing down, on the scanner. &lt;/p&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;&lt;span style=" font-weight:600;"&gt;2.&lt;/span&gt; Press the &lt;span style=" font-style:italic;"&gt;Enter&lt;/span&gt; or &lt;span style=" font-style:italic;"&gt;Scan&lt;/span&gt; button on the printer. &lt;/p&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;&lt;span style=" font-weight:600;"&gt;3.&lt;/span&gt; "Alignment Complete" will be displayed when the process is finished (on some models with a front panel display) or the green light that was blinking during the process will stop blinking and remain green (on some models without a front panel display).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>OKButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>490</x>
+                <y>180</y>
+                <width>80</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>OK</string>
+        </property>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>OKButton</sender>
+        <signal>clicked()</signal>
+        <receiver>Align13Form_base</receiver>
+        <slot>accept()</slot>
+    </connection>
+</connections>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

@@ -1,0 +1,668 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>ColorCal4Form_base</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>ColorCal4Form_base</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>656</width>
+            <height>380</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>HP Device Manager - Color Calibration</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QPushButton" row="4" column="4">
+            <property name="name">
+                <cstring>pushButton1</cstring>
+            </property>
+            <property name="text">
+                <string>Calibrate</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="0" rowspan="2" colspan="3">
+            <property name="name">
+                <cstring>textLabel1</cstring>
+            </property>
+            <property name="text">
+                <string>1. Hold the calibration page at arm's length in front of your eyes.
+&lt;p&gt;&lt;p&gt;
+2. Tilt the page away from you. Look at the two large squares, each containing colored patches. For each large square, find the colored path that &lt;b&gt;most closely&lt;/b&gt; matches the background color. Each patch has an associated letter and number.
+&lt;p&gt;&lt;p&gt;
+3. Choose the letter and number for the matching patches for the gray and color plots.
+&lt;p&gt;&lt;p&gt;
+4. Click &lt;i&gt;"Calibrate".&lt;/i&gt; to continue.
+&lt;p&gt;&lt;p&gt;
+(To reset the printer to known defaults, click &lt;i&gt;"Use Factory Defaults"&lt;/i&gt;)</string>
+            </property>
+            <property name="textFormat">
+                <enum>RichText</enum>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignVCenter</set>
+            </property>
+        </widget>
+        <spacer row="2" column="0" rowspan="2" colspan="1">
+            <property name="name">
+                <cstring>spacer16</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>101</height>
+                </size>
+            </property>
+        </spacer>
+        <spacer row="3" column="4">
+            <property name="name">
+                <cstring>spacer17</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>101</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QGroupBox" row="0" column="3" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>groupBox1</cstring>
+            </property>
+            <property name="title">
+                <string>Gray Plot</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <spacer row="1" column="4">
+                    <property name="name">
+                        <cstring>spacer3</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>60</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QLayoutWidget" row="1" column="1" rowspan="1" colspan="3">
+                    <property name="name">
+                        <cstring>layout2</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QComboBox">
+                            <item>
+                                <property name="text">
+                                    <string>A</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>B</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>C</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>D</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>E</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>F</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>G</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>H</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>I</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>J</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>K</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>L</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>M</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>N</string>
+                                </property>
+                            </item>
+                            <property name="name">
+                                <cstring>GrayLetterComboBox</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <family>Courier [Adobe]</family>
+                                    <bold>1</bold>
+                                </font>
+                            </property>
+                        </widget>
+                        <widget class="QComboBox">
+                            <item>
+                                <property name="text">
+                                    <string>1</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>2</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>3</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>4</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>5</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>6</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>7</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>8</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>9</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>10</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>11</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>12</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>13</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>14</string>
+                                </property>
+                            </item>
+                            <property name="name">
+                                <cstring>GrayNumberComboBox</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <family>Courier [Adobe]</family>
+                                    <bold>1</bold>
+                                </font>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+                <spacer row="1" column="0">
+                    <property name="name">
+                        <cstring>spacer4</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>60</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QLabel" row="0" column="2">
+                    <property name="name">
+                        <cstring>gray_plot_png</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>75</width>
+                            <height>75</height>
+                        </size>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>75</width>
+                            <height>75</height>
+                        </size>
+                    </property>
+                    <property name="scaledContents">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <spacer row="0" column="3" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>spacer1</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>50</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="0" column="0" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>spacer2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>40</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+            </grid>
+        </widget>
+        <widget class="QGroupBox" row="1" column="3" rowspan="2" colspan="2">
+            <property name="name">
+                <cstring>groupBox2</cstring>
+            </property>
+            <property name="title">
+                <string>Color Plot</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel" row="0" column="2">
+                    <property name="name">
+                        <cstring>color_plot_png</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>75</width>
+                            <height>75</height>
+                        </size>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>75</width>
+                            <height>75</height>
+                        </size>
+                    </property>
+                    <property name="scaledContents">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <spacer row="0" column="0" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>spacer12</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>40</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="0" column="3" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>spacer14</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>40</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="1" column="4">
+                    <property name="name">
+                        <cstring>spacer15</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="1" column="0">
+                    <property name="name">
+                        <cstring>spacer13</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QLayoutWidget" row="1" column="1" rowspan="1" colspan="3">
+                    <property name="name">
+                        <cstring>layout1</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QComboBox">
+                            <item>
+                                <property name="text">
+                                    <string>P</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>Q</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>R</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>S</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>T</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>U</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>V</string>
+                                </property>
+                            </item>
+                            <property name="name">
+                                <cstring>ColorLetterComboBox</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <family>Courier [Adobe]</family>
+                                    <bold>1</bold>
+                                </font>
+                            </property>
+                        </widget>
+                        <widget class="QComboBox">
+                            <item>
+                                <property name="text">
+                                    <string>1</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>2</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>3</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>4</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>5</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>6</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>7</string>
+                                </property>
+                            </item>
+                            <property name="name">
+                                <cstring>ColorNumberComboBox</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <family>Courier [Adobe]</family>
+                                    <bold>1</bold>
+                                </font>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+            </grid>
+        </widget>
+        <spacer row="4" column="0">
+            <property name="name">
+                <cstring>spacer9</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>310</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QPushButton" row="4" column="1">
+            <property name="name">
+                <cstring>pushButton2</cstring>
+            </property>
+            <property name="text">
+                <string>Cancel</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="4" column="2" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>UseDefaultsButton</cstring>
+            </property>
+            <property name="text">
+                <string>Use Factory Defaults</string>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>pushButton2</sender>
+        <signal>clicked()</signal>
+        <receiver>ColorCal4Form_base</receiver>
+        <slot>reject()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton1</sender>
+        <signal>clicked()</signal>
+        <receiver>ColorCal4Form_base</receiver>
+        <slot>accept()</slot>
+    </connection>
+    <connection>
+        <sender>ColorNumberComboBox</sender>
+        <signal>highlighted(const QString&amp;)</signal>
+        <receiver>ColorCal4Form_base</receiver>
+        <slot>ColorNumberComboBox_highlighted(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>ColorLetterComboBox</sender>
+        <signal>highlighted(const QString&amp;)</signal>
+        <receiver>ColorCal4Form_base</receiver>
+        <slot>ColorLetterComboBox_highlighted(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>GrayLetterComboBox</sender>
+        <signal>highlighted(const QString&amp;)</signal>
+        <receiver>ColorCal4Form_base</receiver>
+        <slot>GrayLetterComboBox_highlighted(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>GrayNumberComboBox</sender>
+        <signal>highlighted(const QString&amp;)</signal>
+        <receiver>ColorCal4Form_base</receiver>
+        <slot>GrayNumberComboBox_highlighted(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>UseDefaultsButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ColorCal4Form_base</receiver>
+        <slot>UseDefaultsButton_clicked()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">colorcal4form_base.ui.h</include>
+</includes>
+<slots>
+    <slot>ColorNumberComboBox_highlighted( const QString &amp; )</slot>
+    <slot>ColorLetterComboBox_highlighted( const QString &amp; )</slot>
+    <slot>GrayLetterComboBox_highlighted( const QString &amp; )</slot>
+    <slot>GrayNumberComboBox_highlighted( const QString &amp; )</slot>
+    <slot>UseDefaultsButton_clicked()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="6"/>
+</UI>
