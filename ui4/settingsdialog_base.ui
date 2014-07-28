@@ -1,0 +1,542 @@
+<ui version="4.0" >
+ <class>SettingsDialog_base</class>
+ <widget class="QDialog" name="SettingsDialog_base" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>540</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>HP Device Manager - Settings</string>
+  </property>
+  <layout class="QGridLayout" >
+   <item row="0" column="0" colspan="2" >
+    <widget class="QTabWidget" name="TabWidget" >
+     <property name="currentIndex" >
+      <number>2</number>
+     </property>
+     <widget class="QWidget" name="AutoRefresh" >
+      <attribute name="title" >
+       <string>Auto Refresh</string>
+      </attribute>
+      <layout class="QGridLayout" >
+       <item row="0" column="0" >
+        <widget class="QLabel" name="textLabel3_2_2" >
+         <property name="text" >
+          <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'DejaVu Sans'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Configure if and when devices are automatically refreshed&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+         </property>
+         <property name="wordWrap" >
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="Line" name="line1_2_2" >
+         <property name="frameShape" >
+          <enum>QFrame::HLine</enum>
+         </property>
+         <property name="frameShadow" >
+          <enum>QFrame::Sunken</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" >
+        <widget class="QCheckBox" name="AutoRefreshCheckBox" >
+         <property name="text" >
+          <string>&amp;Enable device auto refresh</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" >
+        <widget class="QGroupBox" name="RefreshRateGroupBox" >
+         <property name="enabled" >
+          <bool>true</bool>
+         </property>
+         <property name="title" >
+          <string>Refresh Interval</string>
+         </property>
+         <layout class="QGridLayout" >
+          <item row="0" column="0" >
+           <widget class="QLabel" name="textLabel1_4" >
+            <property name="text" >
+             <string>&amp;Refresh every:</string>
+            </property>
+            <property name="wordWrap" >
+             <bool>false</bool>
+            </property>
+            <property name="buddy" >
+             <cstring>AutoRefreshRateSpinBox</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" >
+           <layout class="QHBoxLayout" >
+            <item>
+             <widget class="QSpinBox" name="AutoRefreshRateSpinBox" >
+              <property name="enabled" >
+               <bool>false</bool>
+              </property>
+              <property name="wrapping" >
+               <bool>true</bool>
+              </property>
+              <property name="buttonSymbols" >
+               <enum>QAbstractSpinBox::PlusMinus</enum>
+              </property>
+              <property name="suffix" >
+               <string> sec</string>
+              </property>
+              <property name="minimum" >
+               <number>10</number>
+              </property>
+              <property name="maximum" >
+               <number>300</number>
+              </property>
+              <property name="value" >
+               <number>30</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="2" >
+           <spacer>
+            <property name="orientation" >
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" >
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="4" column="0" >
+        <widget class="QGroupBox" name="RefreshTypeGroupBox" >
+         <property name="title" >
+          <string>Devices to Refresh</string>
+         </property>
+         <layout class="QGridLayout" >
+          <item row="0" column="0" >
+           <widget class="QRadioButton" name="RefreshCurrentRadioButton" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+            <property name="text" >
+             <string>Only &amp;currently selected device</string>
+            </property>
+            <property name="checked" >
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" >
+           <widget class="QRadioButton" name="RefreshAllRadioButton" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+            <property name="text" >
+             <string>&amp;All devices</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="5" column="0" >
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType" >
+          <enum>QSizePolicy::Expanding</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>446</width>
+           <height>41</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="SystemTray" >
+      <attribute name="title" >
+       <string>System Tray Icon</string>
+      </attribute>
+      <layout class="QGridLayout" >
+       <item row="0" column="0" >
+        <widget class="QLabel" name="textLabel3_2_3" >
+         <property name="text" >
+          <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'DejaVu Sans'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Configure the behavior of the HP Status Service (hp-systray)&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+         </property>
+         <property name="wordWrap" >
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="Line" name="line1_2_3" >
+         <property name="frameShape" >
+          <enum>QFrame::HLine</enum>
+         </property>
+         <property name="frameShadow" >
+          <enum>QFrame::Sunken</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" >
+        <widget class="SystrayFrame" name="SystemTraySettings" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="frameShadow" >
+          <enum>QFrame::Raised</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="Commands" >
+      <attribute name="title" >
+       <string>Commands (Advanced)</string>
+      </attribute>
+      <layout class="QGridLayout" >
+       <item row="0" column="0" colspan="2" >
+        <widget class="QLabel" name="textLabel3_2_2_2" >
+         <property name="text" >
+          <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'DejaVu Sans'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Configure what commands to run for device actions&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+         </property>
+         <property name="wordWrap" >
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="2" >
+        <widget class="Line" name="line1_2_2_3" >
+         <property name="frameShape" >
+          <enum>QFrame::HLine</enum>
+         </property>
+         <property name="frameShadow" >
+          <enum>QFrame::Sunken</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2" >
+        <widget class="QGroupBox" name="groupBox_3" >
+         <property name="title" >
+          <string>Commands</string>
+         </property>
+         <layout class="QGridLayout" >
+          <item row="0" column="0" >
+           <widget class="QLabel" name="textLabel1_2" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+            <property name="text" >
+             <string>&amp;Print:</string>
+            </property>
+            <property name="wordWrap" >
+             <bool>false</bool>
+            </property>
+            <property name="buddy" >
+             <cstring>PrintCommandLineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" >
+           <widget class="QLineEdit" name="PrintCommandLineEdit" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0" >
+           <widget class="QLabel" name="textLabel2_2" >
+            <property name="text" >
+             <string>&amp;Scan:</string>
+            </property>
+            <property name="wordWrap" >
+             <bool>false</bool>
+            </property>
+            <property name="buddy" >
+             <cstring>ScanCommandLineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0" >
+           <widget class="QLineEdit" name="ScanCommandLineEdit" />
+          </item>
+          <item row="4" column="0" >
+           <widget class="QLabel" name="textLabel3_3" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+            <property name="text" >
+             <string>Send PC &amp;Fax:</string>
+            </property>
+            <property name="wordWrap" >
+             <bool>false</bool>
+            </property>
+            <property name="buddy" >
+             <cstring>SendFaxCommandLineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0" >
+           <widget class="QLineEdit" name="SendFaxCommandLineEdit" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0" >
+           <widget class="QLabel" name="textLabel4" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+            <property name="text" >
+             <string>&amp;Unload Photo Cards:</string>
+            </property>
+            <property name="wordWrap" >
+             <bool>false</bool>
+            </property>
+            <property name="buddy" >
+             <cstring>AccessPCardCommandLineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0" >
+           <widget class="QLineEdit" name="AccessPCardCommandLineEdit" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="0" >
+           <widget class="QLabel" name="textLabel5" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+            <property name="text" >
+             <string>Make &amp;Copies:</string>
+            </property>
+            <property name="wordWrap" >
+             <bool>false</bool>
+            </property>
+            <property name="buddy" >
+             <cstring>MakeCopiesCommandLineEdit</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0" >
+           <widget class="QLineEdit" name="MakeCopiesCommandLineEdit" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="3" column="1" >
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType" >
+          <enum>QSizePolicy::Expanding</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>20</width>
+           <height>60</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="4" column="0" >
+        <widget class="QPushButton" name="SetDefaultsButton" >
+         <property name="enabled" >
+          <bool>true</bool>
+         </property>
+         <property name="text" >
+          <string>Set &amp;Defaults</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1" >
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType" >
+          <enum>QSizePolicy::Expanding</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="1" column="0" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>301</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="1" >
+    <widget class="QDialogButtonBox" name="StdButtons" >
+     <property name="standardButtons" >
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::NoButton|QDialogButtonBox::Ok</set>
+     </property>
+     <property name="centerButtons" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <customwidgets>
+  <customwidget>
+   <class>SystrayFrame</class>
+   <extends>QFrame</extends>
+   <header>systrayframe.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>TabWidget</tabstop>
+  <tabstop>AutoRefreshCheckBox</tabstop>
+  <tabstop>AutoRefreshRateSpinBox</tabstop>
+  <tabstop>RefreshCurrentRadioButton</tabstop>
+  <tabstop>RefreshAllRadioButton</tabstop>
+  <tabstop>PrintCommandLineEdit</tabstop>
+  <tabstop>ScanCommandLineEdit</tabstop>
+  <tabstop>SendFaxCommandLineEdit</tabstop>
+  <tabstop>AccessPCardCommandLineEdit</tabstop>
+  <tabstop>MakeCopiesCommandLineEdit</tabstop>
+  <tabstop>SetDefaultsButton</tabstop>
+  <tabstop>StdButtons</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>AutoRefreshCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>AutoRefreshRateSpinBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>31</x>
+     <y>81</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>161</x>
+     <y>157</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>AutoRefreshCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>RefreshAllRadioButton</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>243</x>
+     <y>92</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>243</x>
+     <y>259</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>AutoRefreshCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>RefreshCurrentRadioButton</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>243</x>
+     <y>92</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>243</x>
+     <y>233</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>StdButtons</sender>
+   <signal>accepted()</signal>
+   <receiver>SettingsDialog_base</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>398</x>
+     <y>541</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>243</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>StdButtons</sender>
+   <signal>rejected()</signal>
+   <receiver>SettingsDialog_base</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>398</x>
+     <y>541</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>243</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

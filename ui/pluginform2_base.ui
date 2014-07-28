@@ -1,0 +1,227 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>PluginForm2_base</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>PluginForm2_base</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>585</width>
+            <height>375</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>HP Device Manager - Plugin Download and Install</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>titleTextLabel</cstring>
+            </property>
+            <property name="text">
+                <string>Driver Plug-in Install</string>
+            </property>
+        </widget>
+        <widget class="Line" row="1" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>line1</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>HLine</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+        </widget>
+        <spacer row="6" column="0">
+            <property name="name">
+                <cstring>spacer8</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>390</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QPushButton" row="6" column="2">
+            <property name="name">
+                <cstring>cancelPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Cancel</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="6" column="1">
+            <property name="name">
+                <cstring>actionPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Download and Install</string>
+            </property>
+            <property name="default">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLabel" row="2" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>textLabel1</cstring>
+            </property>
+            <property name="text">
+                <string>You may download the plug-in directly from an HP authorized server, or, if you already have a copy of the file, you can specify a path to the file.</string>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignVCenter</set>
+            </property>
+        </widget>
+        <spacer row="5" column="2">
+            <property name="name">
+                <cstring>spacer11</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>50</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QButtonGroup" row="4" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>sourceGroup</cstring>
+            </property>
+            <property name="title">
+                <string>Plug-in Source</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QRadioButton" row="1" column="0">
+                    <property name="name">
+                        <cstring>radioButton5</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Use an exisiting copy of the plug-in file (advanced):</string>
+                    </property>
+                    <property name="buttonGroupId">
+                        <number>1</number>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="2" column="1">
+                    <property name="name">
+                        <cstring>browsePushButton</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="text">
+                        <string>Browse...</string>
+                    </property>
+                </widget>
+                <widget class="QRadioButton" row="0" column="0">
+                    <property name="name">
+                        <cstring>radioButton4</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Download the plug-in from an HP authorized server (recommended)</string>
+                    </property>
+                    <property name="checked">
+                        <bool>true</bool>
+                    </property>
+                    <property name="buttonGroupId">
+                        <number>0</number>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="2" column="0">
+                    <property name="name">
+                        <cstring>pathLineEdit</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+        <spacer row="3" column="0">
+            <property name="name">
+                <cstring>spacer13</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>21</height>
+                </size>
+            </property>
+        </spacer>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>sourceGroup</sender>
+        <signal>clicked(int)</signal>
+        <receiver>PluginForm2_base</receiver>
+        <slot>sourceGroup_clicked(int)</slot>
+    </connection>
+    <connection>
+        <sender>browsePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>PluginForm2_base</receiver>
+        <slot>browsePushButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pathLineEdit</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>PluginForm2_base</receiver>
+        <slot>pathLineEdit_textChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>actionPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>PluginForm2_base</receiver>
+        <slot>actionPushButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>cancelPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>PluginForm2_base</receiver>
+        <slot>cancelPushButton_clicked()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">pluginform2_base.ui.h</include>
+</includes>
+<slots>
+    <slot>sourceGroup_clicked( int )</slot>
+    <slot>browsePushButton_clicked()</slot>
+    <slot>pathLineEdit_textChanged( const QString &amp; )</slot>
+    <slot>actionPushButton_clicked()</slot>
+    <slot>cancelPushButton_clicked()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

@@ -1,0 +1,179 @@
+<ui version="4.0" >
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>HP Device Manager - Plug-in Installer</string>
+  </property>
+  <layout class="QGridLayout" >
+   <item row="0" column="0" colspan="5" >
+    <widget class="QStackedWidget" name="StackedWidget" >
+     <property name="currentIndex" >
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="page" >
+      <layout class="QGridLayout" >
+       <item row="0" column="0" >
+        <widget class="QLabel" name="label" >
+         <property name="font" >
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="text" >
+          <string>Driver Plug-in License Agreement</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="Line" name="line" >
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" >
+        <widget class="QLabel" name="label_2" >
+         <property name="text" >
+          <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Please read the driver plug-in license agreement and then check the &lt;span style=" font-style:italic;">I agree&lt;/span> box and then click &lt;span style=" font-style:italic;">Next&lt;/span> to continue.&lt;/p>&lt;/body>&lt;/html></string>
+         </property>
+         <property name="wordWrap" >
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" >
+        <widget class="QTextEdit" name="LicenseTextEdit" >
+         <property name="autoFormatting" >
+          <set>QTextEdit::AutoAll</set>
+         </property>
+         <property name="readOnly" >
+          <bool>true</bool>
+         </property>
+         <property name="textInteractionFlags" >
+          <set>Qt::NoTextInteraction</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" >
+        <widget class="QCheckBox" name="AgreeCheckBox" >
+         <property name="text" >
+          <string>I agree to the terms of the driver plug-in license agreement</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="5" >
+    <widget class="Line" name="line_2" >
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>161</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="2" >
+    <widget class="QPushButton" name="BackButton" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="text" >
+      <string>&lt; Back</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3" >
+    <widget class="QPushButton" name="NextButton" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="text" >
+      <string>Next ></string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="4" >
+    <widget class="QPushButton" name="CancelButton" >
+     <property name="text" >
+      <string>Cancel</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>AgreeCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>NextButton</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>129</x>
+     <y>432</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>450</x>
+     <y>478</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>NextButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>454</x>
+     <y>481</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>448</x>
+     <y>495</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CancelButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>556</x>
+     <y>476</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>556</x>
+     <y>495</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -1,0 +1,222 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>ColorCalForm2_base</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>ColorCalForm2_base</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>952</width>
+            <height>327</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>HP Device Manager - Color Calibration</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QPushButton" row="1" column="2">
+            <property name="name">
+                <cstring>CancelButton</cstring>
+            </property>
+            <property name="text">
+                <string>Cancel</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="1" column="3">
+            <property name="name">
+                <cstring>ContinueButton</cstring>
+            </property>
+            <property name="text">
+                <string>Next &gt;</string>
+            </property>
+        </widget>
+        <spacer row="1" column="1">
+            <property name="name">
+                <cstring>spacer1</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>270</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QButtonGroup" row="0" column="0" rowspan="1" colspan="4">
+            <property name="name">
+                <cstring>buttonGroup</cstring>
+            </property>
+            <property name="title">
+                <string></string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>Icon</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="scaledContents">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="1" rowspan="1" colspan="4">
+                    <property name="name">
+                        <cstring>textLabel2_2</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&lt;b&gt;A page of color patches is printing. When it is complete, follow these steps:&lt;/b&gt;
+&lt;p&gt;&lt;b&gt;1.&lt;/b&gt; Hold the page approximately 8 inches (~20cm) in front of your eyes.
+&lt;p&gt;&lt;b&gt;2.&lt;/b&gt; Slowly move the page away from you until the numbered patches fade to match the background.
+&lt;p&gt;&lt;b&gt;3.&lt;/b&gt; Select the number (below) between &lt;i&gt;1&lt;/i&gt; and &lt;i&gt;81 &lt;/i&gt;of the numbered patch that &lt;b&gt;best &lt;/b&gt;matches the background:</string>
+                    </property>
+                    <property name="alignment">
+                        <set>WordBreak|AlignVCenter</set>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget" row="2" column="2" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>layout3</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>textLabel1</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Number of best matching patch (1-81):</string>
+                            </property>
+                        </widget>
+                        <widget class="QSpinBox">
+                            <property name="name">
+                                <cstring>SpinBox</cstring>
+                            </property>
+                            <property name="maxValue">
+                                <number>81</number>
+                            </property>
+                            <property name="minValue">
+                                <number>1</number>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+                <spacer row="2" column="4">
+                    <property name="name">
+                        <cstring>spacer3</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>351</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="2" column="0" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>spacer4</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>251</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="1" column="2">
+                    <property name="name">
+                        <cstring>spacer5</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>21</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="3" column="3">
+                    <property name="name">
+                        <cstring>spacer6</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>61</height>
+                        </size>
+                    </property>
+                </spacer>
+            </grid>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>CancelButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ColorCalForm2_base</receiver>
+        <slot>reject()</slot>
+    </connection>
+    <connection>
+        <sender>ContinueButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ColorCalForm2_base</receiver>
+        <slot>accept()</slot>
+    </connection>
+    <connection>
+        <sender>SpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>ColorCalForm2_base</receiver>
+        <slot>SpinBox_valueChanged(int)</slot>
+    </connection>
+</connections>
+<slots>
+    <slot>buttonGroup_clicked( int )</slot>
+    <slot>SpinBox_valueChanged( int )</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

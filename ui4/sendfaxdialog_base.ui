@@ -1,0 +1,711 @@
+<ui version="4.0" >
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog" >
+  <property name="windowModality" >
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>HP Device Manager - Send Fax</string>
+  </property>
+  <layout class="QGridLayout" >
+   <item row="0" column="0" colspan="5" >
+    <widget class="QStackedWidget" name="StackedWidget" >
+     <property name="frameShape" >
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="currentIndex" >
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="SelectFax" >
+      <layout class="QGridLayout" >
+       <item row="0" column="0" >
+        <widget class="QLabel" name="label_8" >
+         <property name="font" >
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="text" >
+          <string>Select Fax</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="Line" name="line_4" >
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" >
+        <layout class="QGridLayout" >
+         <item row="0" column="0" colspan="3" >
+          <widget class="PrinterNameComboBox" name="FaxComboBox" />
+         </item>
+         <item row="1" column="0" >
+          <spacer>
+           <property name="orientation" >
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType" >
+            <enum>QSizePolicy::MinimumExpanding</enum>
+           </property>
+           <property name="sizeHint" >
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="1" column="1" >
+          <widget class="QPushButton" name="FaxOptionsButton" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text" >
+            <string>Fax Settings...</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2" >
+          <widget class="QPushButton" name="FaxSetupButton" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text" >
+            <string>Fax Device Setup...</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="0" >
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>564</width>
+           <height>221</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="4" column="0" >
+        <widget class="QLabel" name="label_12" >
+         <property name="text" >
+          <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Select the desired fax printer queue and click &lt;span style=" font-style:italic;">Next&lt;/span> to continue. Note: Once you continue to the next step, you will not be able to change to a different fax queue.&lt;/p>&lt;/body>&lt;/html></string>
+         </property>
+         <property name="wordWrap" >
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="CoverPage" >
+      <layout class="QGridLayout" >
+       <item row="0" column="0" >
+        <widget class="QLabel" name="label_3" >
+         <property name="font" >
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="text" >
+          <string>Select and Edit Fax Coverpage (Optional)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="Line" name="line_2" >
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" >
+        <widget class="QGroupBox" name="CoverPageGroupBox" >
+         <property name="enabled" >
+          <bool>true</bool>
+         </property>
+         <property name="title" >
+          <string>Include Coverpage</string>
+         </property>
+         <property name="checkable" >
+          <bool>true</bool>
+         </property>
+         <property name="checked" >
+          <bool>false</bool>
+         </property>
+         <layout class="QGridLayout" >
+          <item rowspan="2" row="0" column="0" >
+           <layout class="QGridLayout" >
+            <item row="0" column="0" colspan="4" >
+             <widget class="QLabel" name="CoverPageName" >
+              <property name="frameShape" >
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="text" >
+               <string/>
+              </property>
+              <property name="alignment" >
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="4" >
+             <widget class="QLabel" name="CoverPagePreview" >
+              <property name="sizePolicy" >
+               <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize" >
+               <size>
+                <width>134</width>
+                <height>192</height>
+               </size>
+              </property>
+              <property name="maximumSize" >
+               <size>
+                <width>134</width>
+                <height>192</height>
+               </size>
+              </property>
+              <property name="frameShape" >
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="text" >
+               <string/>
+              </property>
+              <property name="scaledContents" >
+               <bool>true</bool>
+              </property>
+              <property name="alignment" >
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" >
+             <spacer>
+              <property name="orientation" >
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType" >
+               <enum>QSizePolicy::Preferred</enum>
+              </property>
+              <property name="sizeHint" >
+               <size>
+                <width>16</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="2" column="1" >
+             <widget class="QPushButton" name="PrevCoverPageButton" >
+              <property name="text" >
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2" >
+             <widget class="QPushButton" name="NextCoverPageButton" >
+              <property name="text" >
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="3" >
+             <spacer>
+              <property name="orientation" >
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType" >
+               <enum>QSizePolicy::Preferred</enum>
+              </property>
+              <property name="sizeHint" >
+               <size>
+                <width>31</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="3" column="1" >
+             <spacer>
+              <property name="orientation" >
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" >
+               <size>
+                <width>20</width>
+                <height>21</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="1" >
+           <layout class="QVBoxLayout" >
+            <item>
+             <widget class="QLabel" name="label_16" >
+              <property name="text" >
+               <string>Regarding:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="RegardingEdit" />
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="1" >
+           <layout class="QGridLayout" >
+            <item row="0" column="0" >
+             <widget class="QLabel" name="label_17" >
+              <property name="text" >
+               <string>Optional Message: (max. 2000 characters or 32 preformatted lines)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" >
+             <widget class="QTextEdit" name="MessageEdit" />
+            </item>
+            <item row="2" column="0" >
+             <widget class="QCheckBox" name="PreserveFormattingCheckBox" >
+              <property name="text" >
+               <string>Preformatted (preserve formatting)</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="3" column="0" >
+        <widget class="QLabel" name="label_13" >
+         <property name="text" >
+          <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'DejaVu Sans'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:9pt;">Check&lt;span style=" font-style:italic;"> Include Coverpage &lt;/span>to add a coverpage to this fax. To continue without a coverpage, click &lt;span style=" font-style:italic;">Next &amp;gt;&lt;/span>.&lt;/p>&lt;/body>&lt;/html></string>
+         </property>
+         <property name="wordWrap" >
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="SelectFiles" >
+      <layout class="QGridLayout" >
+       <item row="0" column="0" >
+        <widget class="QLabel" name="label_2" >
+         <property name="font" >
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="text" >
+          <string>Select Files to Send</string>
+         </property>
+         <property name="wordWrap" >
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="Line" name="line" >
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" >
+        <widget class="FileTable" native="1" name="FilesTable" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" >
+        <widget class="QLabel" name="FilesPageNote" >
+         <property name="text" >
+          <string>Note: You may also add files to the fax by printing from any application to the '%1' fax printer.</string>
+         </property>
+         <property name="wordWrap" >
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="SelectRecipients" >
+      <layout class="QGridLayout" >
+       <item row="0" column="0" >
+        <widget class="QLabel" name="label_4" >
+         <property name="font" >
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="text" >
+          <string>Select Fax Recipients</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="Line" name="line_3" >
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" >
+        <widget class="QGroupBox" name="groupBox_4" >
+         <property name="title" >
+          <string>Recipients</string>
+         </property>
+         <layout class="QGridLayout" >
+          <item row="0" column="0" colspan="5" >
+           <widget class="QTableWidget" name="RecipientsTable" />
+          </item>
+          <item row="1" column="0" >
+           <widget class="QPushButton" name="RemoveRecipientButton" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+            <property name="text" >
+             <string>Remove</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1" >
+           <widget class="QPushButton" name="MoveRecipientUpButton" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+            <property name="text" >
+             <string>Move Up</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2" >
+           <widget class="QPushButton" name="MoveRecipientDownButton" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+            <property name="text" >
+             <string>Move Down</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3" >
+           <spacer>
+            <property name="orientation" >
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" >
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="4" >
+           <widget class="QPushButton" name="FABButton" >
+            <property name="text" >
+             <string>Fax Address Book...</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="3" column="0" >
+        <widget class="QGroupBox" name="groupBox" >
+         <property name="title" >
+          <string>Add Recipients or Groups from the Fax Address Book</string>
+         </property>
+         <layout class="QGridLayout" >
+          <item row="0" column="0" >
+           <layout class="QHBoxLayout" >
+            <item>
+             <widget class="QLabel" name="label" >
+              <property name="text" >
+               <string>Add an individual:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer>
+              <property name="orientation" >
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType" >
+               <enum>QSizePolicy::Preferred</enum>
+              </property>
+              <property name="sizeHint" >
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QComboBox" name="AddIndividualComboBox" >
+              <property name="sizePolicy" >
+               <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="AddIndividualButton" >
+              <property name="enabled" >
+               <bool>false</bool>
+              </property>
+              <property name="text" >
+               <string>Add</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0" >
+           <layout class="QHBoxLayout" >
+            <item>
+             <widget class="QLabel" name="label_5" >
+              <property name="text" >
+               <string>Add a group:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer>
+              <property name="orientation" >
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType" >
+               <enum>QSizePolicy::Preferred</enum>
+              </property>
+              <property name="sizeHint" >
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QComboBox" name="AddGroupComboBox" >
+              <property name="sizePolicy" >
+               <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="AddGroupButton" >
+              <property name="enabled" >
+               <bool>false</bool>
+              </property>
+              <property name="text" >
+               <string>Add</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="4" column="0" >
+        <widget class="QGroupBox" name="groupBox_3" >
+         <property name="title" >
+          <string>Quick Add an Individual Recipient (recipient will automatically be added to fax address book)</string>
+         </property>
+         <layout class="QGridLayout" >
+          <item row="0" column="0" >
+           <layout class="QHBoxLayout" >
+            <item>
+             <widget class="QLabel" name="label_6" >
+              <property name="text" >
+               <string>Name:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="QuickAddNameEdit" />
+            </item>
+            <item>
+             <widget class="QLabel" name="label_7" >
+              <property name="text" >
+               <string>Fax Number:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="QuickAddFaxEdit" />
+            </item>
+            <item>
+             <widget class="QPushButton" name="QuickAddButton" >
+              <property name="enabled" >
+               <bool>false</bool>
+              </property>
+              <property name="text" >
+               <string>Add</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="SendFax" >
+      <layout class="QGridLayout" >
+       <item row="0" column="0" >
+        <widget class="QLabel" name="label_9" >
+         <property name="font" >
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="text" >
+          <string>Send Fax</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="Line" name="line_5" >
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" >
+        <widget class="QLabel" name="label_10" >
+         <property name="text" >
+          <string>Status:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" >
+        <widget class="QListWidget" name="StatusList" />
+       </item>
+       <item row="4" column="0" >
+        <widget class="QLabel" name="label_15" >
+         <property name="text" >
+          <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Click &lt;span style=" font-style:italic;">Send Fax&lt;/span> to start the fax transmission.&lt;/p>&lt;/body>&lt;/html></string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="5" >
+    <widget class="Line" name="line_6" >
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" >
+    <widget class="QLabel" name="StepText" >
+     <property name="text" >
+      <string>Step %1 of %2</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>231</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="2" >
+    <widget class="QPushButton" name="BackButton" >
+     <property name="text" >
+      <string>&lt; Back</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3" >
+    <widget class="QPushButton" name="NextButton" >
+     <property name="text" >
+      <string>Next ></string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="4" >
+    <widget class="QPushButton" name="CancelButton" >
+     <property name="text" >
+      <string>Cancel</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>FileTable</class>
+   <extends>QWidget</extends>
+   <header>filetable.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PrinterNameComboBox</class>
+   <extends>QComboBox</extends>
+   <header>printernamecombobox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

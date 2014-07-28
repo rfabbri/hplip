@@ -1,0 +1,460 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>ColorAdjForm_base</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>ColorAdjForm_base</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1013</width>
+            <height>164</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>HP Device Manager - Color Adjustment</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QPushButton" row="1" column="2">
+            <property name="name">
+                <cstring>CancelButton</cstring>
+            </property>
+            <property name="text">
+                <string>Cancel</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="1" column="3">
+            <property name="name">
+                <cstring>ContinueButton</cstring>
+            </property>
+            <property name="text">
+                <string>Next &gt;</string>
+            </property>
+        </widget>
+        <spacer row="1" column="1">
+            <property name="name">
+                <cstring>spacer1</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>270</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QButtonGroup" row="0" column="0" rowspan="1" colspan="4">
+            <property name="name">
+                <cstring>buttonGroup</cstring>
+            </property>
+            <property name="title">
+                <string></string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>Icon</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="scaledContents">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="1" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>textLabel2_2</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Choose the numbered colored box that the color &lt;b&gt;best &lt;/b&gt;matches the background color of the bar.</string>
+                    </property>
+                    <property name="alignment">
+                        <set>WordBreak|AlignVCenter</set>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget" row="1" column="1" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>layout2</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton1</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>8</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>1</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton2</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>8</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>2</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton3</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>8</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>3</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton4</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>8</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>4</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton5</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>8</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>5</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton6</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>8</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>6</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton7</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>8</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>7</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton8</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>8</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>8</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton9</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>8</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>9</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton10</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>8</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>10</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton11</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>8</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>11</string>
+                            </property>
+                            <property name="checked">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton12</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>8</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>12</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton13</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>8</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>13</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton14</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>8</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>14</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton15</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>8</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>15</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton16</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>8</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>16</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton17</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>8</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>17</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton18</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>8</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>18</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton19</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>8</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>19</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton20</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>8</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>20</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>radioButton21</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>8</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>21</string>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+                <spacer row="2" column="2">
+                    <property name="name">
+                        <cstring>spacer2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>750</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>layout3</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>LineLabel_2</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <family>Times New Roman</family>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>&lt;b&gt;&lt;font size="+1"&gt;Line&lt;/font&gt;&lt;/b&gt;</string>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>LineLabel</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <family>Times New Roman</family>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>&lt;b&gt;&lt;font size="+1"&gt;X&lt;/font&gt;&lt;/b&gt;</string>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+            </grid>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>CancelButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ColorAdjForm_base</receiver>
+        <slot>reject()</slot>
+    </connection>
+    <connection>
+        <sender>ContinueButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ColorAdjForm_base</receiver>
+        <slot>accept()</slot>
+    </connection>
+    <connection>
+        <sender>buttonGroup</sender>
+        <signal>clicked(int)</signal>
+        <receiver>ColorAdjForm_base</receiver>
+        <slot>buttonGroup_clicked(int)</slot>
+    </connection>
+</connections>
+<slots>
+    <slot>buttonGroup_clicked( int )</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

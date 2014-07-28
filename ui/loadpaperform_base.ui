@@ -1,0 +1,99 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>LoadPaperForm_base</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>LoadPaperForm_base</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>621</width>
+            <height>178</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>HP Device Manager - Load Plain Paper</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QPushButton" row="1" column="3">
+            <property name="name">
+                <cstring>ContinueButton</cstring>
+            </property>
+            <property name="text">
+                <string>Continue</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="1" column="2">
+            <property name="name">
+                <cstring>CancelButton</cstring>
+            </property>
+            <property name="text">
+                <string>Cancel</string>
+            </property>
+        </widget>
+        <spacer row="1" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>spacer7</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>391</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QLabel" row="0" column="1" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>textLabel7</cstring>
+            </property>
+            <property name="text">
+                <string>A page will be printed. Please load &lt;b&gt;plain paper&lt;/b&gt; in the printer and then press continue.</string>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="0">
+            <property name="name">
+                <cstring>Icon</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>0</hsizetype>
+                    <vsizetype>0</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="scaledContents">
+                <bool>true</bool>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>CancelButton</sender>
+        <signal>clicked()</signal>
+        <receiver>LoadPaperForm_base</receiver>
+        <slot>reject()</slot>
+    </connection>
+    <connection>
+        <sender>ContinueButton</sender>
+        <signal>clicked()</signal>
+        <receiver>LoadPaperForm_base</receiver>
+        <slot>accept()</slot>
+    </connection>
+</connections>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

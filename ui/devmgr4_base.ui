@@ -1,0 +1,1161 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>DevMgr4_base</class>
+<widget class="QMainWindow">
+    <property name="name">
+        <cstring>DevMgr4_base</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>778</width>
+            <height>505</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>HP Device Manager</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QSplitter" row="0" column="0">
+            <property name="name">
+                <cstring>splitter2</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout8</cstring>
+                </property>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QIconView">
+                        <property name="name">
+                            <cstring>DeviceList</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>3</hsizetype>
+                                <vsizetype>5</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                            <size>
+                                <width>0</width>
+                                <height>0</height>
+                            </size>
+                        </property>
+                        <property name="maximumSize">
+                            <size>
+                                <width>32767</width>
+                                <height>32767</height>
+                            </size>
+                        </property>
+                        <property name="resizePolicy">
+                            <enum>Manual</enum>
+                        </property>
+                        <property name="arrangement">
+                            <enum>TopToBottom</enum>
+                        </property>
+                        <property name="resizeMode">
+                            <enum>Adjust</enum>
+                        </property>
+                    </widget>
+                </vbox>
+            </widget>
+            <widget class="QTabWidget">
+                <property name="name">
+                    <cstring>Tabs</cstring>
+                </property>
+                <widget class="QWidget">
+                    <property name="name">
+                        <cstring>FunctionsTab</cstring>
+                    </property>
+                    <attribute name="title">
+                        <string>Actions</string>
+                    </attribute>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QIconView" row="0" column="0">
+                            <property name="name">
+                                <cstring>iconList</cstring>
+                            </property>
+                            <property name="frameShape">
+                                <enum>StyledPanel</enum>
+                            </property>
+                            <property name="frameShadow">
+                                <enum>Sunken</enum>
+                            </property>
+                            <property name="selectionMode">
+                                <enum>Single</enum>
+                            </property>
+                            <property name="gridX">
+                                <number>100</number>
+                            </property>
+                            <property name="gridY">
+                                <number>100</number>
+                            </property>
+                            <property name="resizeMode">
+                                <enum>Adjust</enum>
+                            </property>
+                            <property name="showToolTips">
+                                <bool>false</bool>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+                <widget class="QWidget">
+                    <property name="name">
+                        <cstring>StatusTab</cstring>
+                    </property>
+                    <attribute name="title">
+                        <string>Status</string>
+                    </attribute>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QListView" row="1" column="0">
+                            <column>
+                                <property name="text">
+                                    <string></string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <column>
+                                <property name="text">
+                                    <string>Description</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <column>
+                                <property name="text">
+                                    <string>Date and Time</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <column>
+                                <property name="text">
+                                    <string>Code</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <column>
+                                <property name="text">
+                                    <string>Job ID</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <column>
+                                <property name="text">
+                                    <string>User</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <property name="name">
+                                <cstring>statusListView</cstring>
+                            </property>
+                            <property name="selectionMode">
+                                <enum>NoSelection</enum>
+                            </property>
+                            <property name="allColumnsShowFocus">
+                                <bool>true</bool>
+                            </property>
+                            <property name="resizeMode">
+                                <enum>NoColumn</enum>
+                            </property>
+                        </widget>
+                        <widget class="QLayoutWidget" row="0" column="0">
+                            <property name="name">
+                                <cstring>layout11</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <spacer>
+                                    <property name="name">
+                                        <cstring>spacer3</cstring>
+                                    </property>
+                                    <property name="orientation">
+                                        <enum>Horizontal</enum>
+                                    </property>
+                                    <property name="sizeType">
+                                        <enum>Expanding</enum>
+                                    </property>
+                                    <property name="sizeHint">
+                                        <size>
+                                            <width>20</width>
+                                            <height>20</height>
+                                        </size>
+                                    </property>
+                                </spacer>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>panel</cstring>
+                                    </property>
+                                    <property name="sizePolicy">
+                                        <sizepolicy>
+                                            <hsizetype>0</hsizetype>
+                                            <vsizetype>0</vsizetype>
+                                            <horstretch>0</horstretch>
+                                            <verstretch>0</verstretch>
+                                        </sizepolicy>
+                                    </property>
+                                    <property name="minimumSize">
+                                        <size>
+                                            <width>254</width>
+                                            <height>40</height>
+                                        </size>
+                                    </property>
+                                    <property name="scaledContents">
+                                        <bool>true</bool>
+                                    </property>
+                                </widget>
+                                <spacer>
+                                    <property name="name">
+                                        <cstring>spacer4</cstring>
+                                    </property>
+                                    <property name="orientation">
+                                        <enum>Horizontal</enum>
+                                    </property>
+                                    <property name="sizeType">
+                                        <enum>Expanding</enum>
+                                    </property>
+                                    <property name="sizeHint">
+                                        <size>
+                                            <width>21</width>
+                                            <height>20</height>
+                                        </size>
+                                    </property>
+                                </spacer>
+                            </hbox>
+                        </widget>
+                    </grid>
+                </widget>
+                <widget class="QWidget">
+                    <property name="name">
+                        <cstring>SuppliesTab</cstring>
+                    </property>
+                    <attribute name="title">
+                        <string>Supplies</string>
+                    </attribute>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QListView" row="0" column="0">
+                            <column>
+                                <property name="text">
+                                    <string></string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <column>
+                                <property name="text">
+                                    <string>Description</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <column>
+                                <property name="text">
+                                    <string>HP Part No.</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <column>
+                                <property name="text">
+                                    <string>Approx. Level</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <column>
+                                <property name="text">
+                                    <string>Status</string>
+                                </property>
+                                <property name="clickable">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="resizable">
+                                    <bool>true</bool>
+                                </property>
+                            </column>
+                            <property name="name">
+                                <cstring>suppliesList</cstring>
+                            </property>
+                            <property name="selectionMode">
+                                <enum>NoSelection</enum>
+                            </property>
+                            <property name="allColumnsShowFocus">
+                                <bool>true</bool>
+                            </property>
+                            <property name="resizeMode">
+                                <enum>NoColumn</enum>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+                <widget class="QWidget">
+                    <property name="name">
+                        <cstring>PrintSettingsTab</cstring>
+                    </property>
+                    <attribute name="title">
+                        <string>Print Settings</string>
+                    </attribute>
+                </widget>
+                <widget class="QWidget">
+                    <property name="name">
+                        <cstring>PrintJobsTab</cstring>
+                    </property>
+                    <attribute name="title">
+                        <string>Print Control</string>
+                    </attribute>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QGroupBox" row="2" column="0" rowspan="1" colspan="4">
+                            <property name="name">
+                                <cstring>groupBox2</cstring>
+                            </property>
+                            <property name="title">
+                                <string>Active Jobs</string>
+                            </property>
+                            <grid>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QListView" row="0" column="0" rowspan="1" colspan="3">
+                                    <column>
+                                        <property name="text">
+                                            <string></string>
+                                        </property>
+                                        <property name="clickable">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="resizable">
+                                            <bool>true</bool>
+                                        </property>
+                                    </column>
+                                    <column>
+                                        <property name="text">
+                                            <string></string>
+                                        </property>
+                                        <property name="clickable">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="resizable">
+                                            <bool>true</bool>
+                                        </property>
+                                    </column>
+                                    <column>
+                                        <property name="text">
+                                            <string>Title/Description</string>
+                                        </property>
+                                        <property name="clickable">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="resizable">
+                                            <bool>true</bool>
+                                        </property>
+                                    </column>
+                                    <column>
+                                        <property name="text">
+                                            <string>Status</string>
+                                        </property>
+                                        <property name="clickable">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="resizable">
+                                            <bool>true</bool>
+                                        </property>
+                                    </column>
+                                    <column>
+                                        <property name="text">
+                                            <string>Job ID</string>
+                                        </property>
+                                        <property name="clickable">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="resizable">
+                                            <bool>true</bool>
+                                        </property>
+                                    </column>
+                                    <property name="name">
+                                        <cstring>jobList</cstring>
+                                    </property>
+                                    <property name="selectionMode">
+                                        <enum>NoSelection</enum>
+                                    </property>
+                                    <property name="allColumnsShowFocus">
+                                        <bool>true</bool>
+                                    </property>
+                                    <property name="resizeMode">
+                                        <enum>NoColumn</enum>
+                                    </property>
+                                </widget>
+                                <widget class="QToolButton" row="1" column="0">
+                                    <property name="name">
+                                        <cstring>cancelToolButton</cstring>
+                                    </property>
+                                    <property name="sizePolicy">
+                                        <sizepolicy>
+                                            <hsizetype>0</hsizetype>
+                                            <vsizetype>0</vsizetype>
+                                            <horstretch>0</horstretch>
+                                            <verstretch>0</verstretch>
+                                        </sizepolicy>
+                                    </property>
+                                    <property name="minimumSize">
+                                        <size>
+                                            <width>32</width>
+                                            <height>32</height>
+                                        </size>
+                                    </property>
+                                    <property name="text">
+                                        <string></string>
+                                    </property>
+                                </widget>
+                                <widget class="QToolButton" row="1" column="1">
+                                    <property name="name">
+                                        <cstring>infoToolButton</cstring>
+                                    </property>
+                                    <property name="sizePolicy">
+                                        <sizepolicy>
+                                            <hsizetype>0</hsizetype>
+                                            <vsizetype>0</vsizetype>
+                                            <horstretch>0</horstretch>
+                                            <verstretch>0</verstretch>
+                                        </sizepolicy>
+                                    </property>
+                                    <property name="minimumSize">
+                                        <size>
+                                            <width>32</width>
+                                            <height>32</height>
+                                        </size>
+                                    </property>
+                                    <property name="text">
+                                        <string></string>
+                                    </property>
+                                </widget>
+                                <spacer row="1" column="2">
+                                    <property name="name">
+                                        <cstring>spacer5</cstring>
+                                    </property>
+                                    <property name="orientation">
+                                        <enum>Horizontal</enum>
+                                    </property>
+                                    <property name="sizeType">
+                                        <enum>Expanding</enum>
+                                    </property>
+                                    <property name="sizeHint">
+                                        <size>
+                                            <width>360</width>
+                                            <height>20</height>
+                                        </size>
+                                    </property>
+                                </spacer>
+                            </grid>
+                        </widget>
+                        <widget class="QGroupBox" row="1" column="0" rowspan="1" colspan="4">
+                            <property name="name">
+                                <cstring>groupBox1</cstring>
+                            </property>
+                            <property name="title">
+                                <string>Printer (Queue) Control</string>
+                            </property>
+                            <grid>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QPushButton" row="0" column="2">
+                                    <property name="name">
+                                        <cstring>defaultPushButton</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Set As Default</string>
+                                    </property>
+                                </widget>
+                                <widget class="QPushButton" row="0" column="1">
+                                    <property name="name">
+                                        <cstring>rejectacceptPushButton</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Reject Jobs</string>
+                                    </property>
+                                </widget>
+                                <widget class="QPushButton" row="0" column="0">
+                                    <property name="name">
+                                        <cstring>stopstartPushButton</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Stop Printer</string>
+                                    </property>
+                                </widget>
+                            </grid>
+                        </widget>
+                        <spacer row="0" column="0">
+                            <property name="name">
+                                <cstring>spacer6</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Preferred</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>20</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <spacer row="0" column="3">
+                            <property name="name">
+                                <cstring>spacer7</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Preferred</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>20</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="QComboBox" row="0" column="2">
+                            <property name="name">
+                                <cstring>PrintJobPrinterCombo</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>7</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>0</width>
+                                    <height>0</height>
+                                </size>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="0" column="1">
+                            <property name="name">
+                                <cstring>printerTextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Printer Name:</string>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+                <widget class="QWidget">
+                    <property name="name">
+                        <cstring>TabPage</cstring>
+                    </property>
+                    <attribute name="title">
+                        <string>Upgrade</string>
+                    </attribute>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>pushButton4</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>390</x>
+                                <y>40</y>
+                                <width>111</width>
+                                <height>30</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>pushButton4</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel1</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>17</x>
+                                <y>43</y>
+                                <width>330</width>
+                                <height>20</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>textLabel1</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel2</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>11</x>
+                                <y>91</y>
+                                <width>480</width>
+                                <height>70</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>textLabel2</string>
+                        </property>
+                    </widget>
+                </widget>
+            </widget>
+        </widget>
+    </grid>
+</widget>
+<menubar>
+    <property name="name">
+        <cstring>MenuBar</cstring>
+    </property>
+    <property name="acceptDrops">
+        <bool>false</bool>
+    </property>
+    <item text="Device" name="Device">
+        <action name="setupDevice"/>
+        <separator/>
+        <action name="deviceRescanAction"/>
+        <action name="deviceRefreshAll"/>
+        <separator/>
+        <action name="deviceInstallAction"/>
+        <action name="deviceRemoveAction"/>
+        <separator/>
+        <action name="deviceExitAction"/>
+    </item>
+    <item text="Configure" name="Configure">
+        <action name="settingsConfigure"/>
+    </item>
+    <item text="&amp;Help" name="helpMenu">
+        <action name="helpContentsAction"/>
+        <separator/>
+        <action name="helpAboutAction"/>
+    </item>
+    <separator/>
+</menubar>
+<toolbars>
+    <toolbar dock="2">
+        <property name="name">
+            <cstring>Toolbar</cstring>
+        </property>
+        <property name="label">
+            <string>Toolbar</string>
+        </property>
+    </toolbar>
+</toolbars>
+<actions>
+    <action>
+        <property name="name">
+            <cstring>helpContentsAction</cstring>
+        </property>
+        <property name="text">
+            <string>Contents</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Contents...</string>
+        </property>
+        <property name="toolTip">
+            <string>Help Contents (F1)</string>
+        </property>
+        <property name="accel">
+            <string>F1</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>helpIndexAction</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="text">
+            <string>Index</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Index...</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>helpAboutAction</cstring>
+        </property>
+        <property name="text">
+            <string>&amp;About...</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;About...</string>
+        </property>
+        <property name="toolTip">
+            <string>About HP Device Manager...</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>deviceRescanAction</cstring>
+        </property>
+        <property name="text">
+            <string>Refresh Device</string>
+        </property>
+        <property name="menuText">
+            <string>Refresh Device</string>
+        </property>
+        <property name="toolTip">
+            <string>Refresh Device (F5)</string>
+        </property>
+        <property name="accel">
+            <string>F5</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>deviceExitAction</cstring>
+        </property>
+        <property name="text">
+            <string>Exit</string>
+        </property>
+        <property name="menuText">
+            <string>Exit</string>
+        </property>
+        <property name="toolTip">
+            <string>Exit HP Device Manager</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+Q</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>settingsPopupAlertsAction</cstring>
+        </property>
+        <property name="text">
+            <string>Popup Alerts...</string>
+        </property>
+        <property name="menuText">
+            <string>Popup alerts...</string>
+        </property>
+        <property name="toolTip">
+            <string>Configure popup alerts</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>settingsEmailAlertsAction</cstring>
+        </property>
+        <property name="text">
+            <string>Email alerts...</string>
+        </property>
+        <property name="menuText">
+            <string>Email alerts...</string>
+        </property>
+        <property name="toolTip">
+            <string>Configure email alerts</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>settingsConfigure</cstring>
+        </property>
+        <property name="text">
+            <string>Settings...</string>
+        </property>
+        <property name="accel">
+            <string>F2</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>deviceRefreshAll</cstring>
+        </property>
+        <property name="text">
+            <string>Refresh All</string>
+        </property>
+        <property name="accel">
+            <string>F6</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>autoRefresh</cstring>
+        </property>
+        <property name="toggleAction">
+            <bool>true</bool>
+        </property>
+        <property name="on">
+            <bool>true</bool>
+        </property>
+        <property name="text">
+            <string>Auto Refresh</string>
+        </property>
+        <property name="toolTip">
+            <string>Turn on/off Auto Refresh (Ctrl+A)</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+A</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>setupDevice</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="text">
+            <string>Action</string>
+        </property>
+        <property name="menuText">
+            <string>Settings...</string>
+        </property>
+        <property name="toolTip">
+            <string>Device Settings (F3)</string>
+        </property>
+        <property name="accel">
+            <string>F3</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>viewSupportAction</cstring>
+        </property>
+        <property name="text">
+            <string>Support...</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>deviceInstallAction</cstring>
+        </property>
+        <property name="text">
+            <string>Setup New Device...</string>
+        </property>
+        <property name="menuText">
+            <string>Setup New Device...</string>
+        </property>
+        <property name="accel">
+            <string>Ins</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>deviceRemoveAction</cstring>
+        </property>
+        <property name="text">
+            <string>Remove Device...</string>
+        </property>
+        <property name="menuText">
+            <string>Remove Device...</string>
+        </property>
+        <property name="accel">
+            <string>Del</string>
+        </property>
+    </action>
+</actions>
+<connections>
+    <connection>
+        <sender>helpIndexAction</sender>
+        <signal>activated()</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>helpIndex()</slot>
+    </connection>
+    <connection>
+        <sender>helpContentsAction</sender>
+        <signal>activated()</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>helpContents()</slot>
+    </connection>
+    <connection>
+        <sender>helpAboutAction</sender>
+        <signal>activated()</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>helpAbout()</slot>
+    </connection>
+    <connection>
+        <sender>deviceExitAction</sender>
+        <signal>activated()</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>close()</slot>
+    </connection>
+    <connection>
+        <sender>deviceRescanAction</sender>
+        <signal>activated()</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>deviceRescanAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>settingsConfigure</sender>
+        <signal>activated()</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>settingsConfigure_activated()</slot>
+    </connection>
+    <connection>
+        <sender>DeviceList</sender>
+        <signal>currentChanged(QIconViewItem*)</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>DeviceList_currentChanged(QIconViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>deviceRefreshAll</sender>
+        <signal>activated()</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>deviceRefreshAll_activated()</slot>
+    </connection>
+    <connection>
+        <sender>DeviceList</sender>
+        <signal>clicked(QIconViewItem*)</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>DeviceList_clicked(QIconViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>DeviceList</sender>
+        <signal>rightButtonClicked(QIconViewItem*,const QPoint&amp;)</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>DeviceList_rightButtonClicked(QIconViewItem*,const QPoint&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>setupDevice</sender>
+        <signal>activated()</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>setupDevice_activated()</slot>
+    </connection>
+    <connection>
+        <sender>viewSupportAction</sender>
+        <signal>activated()</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>viewSupportAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>deviceInstallAction</sender>
+        <signal>activated()</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>deviceInstallAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>deviceRemoveAction</sender>
+        <signal>activated()</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>deviceRemoveAction_activated()</slot>
+    </connection>
+    <connection>
+        <sender>DeviceList</sender>
+        <signal>onItem(QIconViewItem*)</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>DeviceList_onItem(QIconViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>Tabs</sender>
+        <signal>currentChanged(QWidget*)</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>Tabs_currentChanged(QWidget*)</slot>
+    </connection>
+    <connection>
+        <sender>PrintJobPrinterCombo</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>PrintJobPrinterCombo_activated(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>stopstartPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>stopstartPushButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>rejectacceptPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>rejectacceptPushButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>defaultPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>defaultPushButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>iconList</sender>
+        <signal>clicked(QIconViewItem*)</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>iconList_clicked(QIconViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>iconList</sender>
+        <signal>contextMenuRequested(QIconViewItem*,const QPoint&amp;)</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>iconList_contextMenuRequested(QIconViewItem*,const QPoint&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>iconList</sender>
+        <signal>returnPressed(QIconViewItem*)</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>iconList_returnPressed(QIconViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>jobList</sender>
+        <signal>clicked(QListViewItem*)</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>jobList_clicked(QListViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>infoToolButton</sender>
+        <signal>clicked()</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>infoToolButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>cancelToolButton</sender>
+        <signal>clicked()</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>cancelToolButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>jobList</sender>
+        <signal>contextMenuRequested(QListViewItem*,const QPoint&amp;,int)</signal>
+        <receiver>DevMgr4_base</receiver>
+        <slot>jobList_contextMenuRequested(QListViewItem*,const QPoint&amp;,int)</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">devmgr4_base.ui.h</include>
+</includes>
+<slots>
+    <slot>fileNew()</slot>
+    <slot>fileOpen()</slot>
+    <slot>fileSave()</slot>
+    <slot>fileSaveAs()</slot>
+    <slot>filePrint()</slot>
+    <slot>fileExit()</slot>
+    <slot>editUndo()</slot>
+    <slot>editRedo()</slot>
+    <slot>editCut()</slot>
+    <slot>editCopy()</slot>
+    <slot>editPaste()</slot>
+    <slot>editFind()</slot>
+    <slot>helpIndex()</slot>
+    <slot>helpContents()</slot>
+    <slot>helpAbout()</slot>
+    <slot>deviceRescanAction_activated()</slot>
+    <slot>settingsEmailAlertsAction_activated()</slot>
+    <slot>DeviceList_currentChanged( QIconViewItem * )</slot>
+    <slot>CleanPensButton_clicked()</slot>
+    <slot>AlignPensButton_clicked()</slot>
+    <slot>PrintTestPageButton_clicked()</slot>
+    <slot>AdvancedInfoButton_clicked()</slot>
+    <slot>ColorCalibrationButton_clicked()</slot>
+    <slot>settingsConfigure_activated()</slot>
+    <slot>PrintButton_clicked()</slot>
+    <slot>ScanButton_clicked()</slot>
+    <slot>PCardButton_clicked()</slot>
+    <slot>SendFaxButton_clicked()</slot>
+    <slot>MakeCopiesButton_clicked()</slot>
+    <slot>ConfigureFeaturesButton_clicked()</slot>
+    <slot>CancelJobButton_clicked()</slot>
+    <slot>deviceRefreshAll_activated()</slot>
+    <slot>DeviceList_clicked( QIconViewItem * )</slot>
+    <slot>autoRefresh_toggled( bool )</slot>
+    <slot>PrintJobList_currentChanged( QListViewItem * )</slot>
+    <slot>CancelPrintJobButton_clicked()</slot>
+    <slot>PrintJobList_selectionChanged( QListViewItem * )</slot>
+    <slot>DeviceList_rightButtonClicked( QIconViewItem *, const QPoint &amp; )</slot>
+    <slot>OpenEmbeddedBrowserButton_clicked()</slot>
+    <slot>deviceSettingsButton_clicked()</slot>
+    <slot>faxSetupWizardButton_clicked()</slot>
+    <slot>faxSettingsButton_clicked()</slot>
+    <slot>setupDevice_activated()</slot>
+    <slot>viewSupportAction_activated()</slot>
+    <slot>installDevice_activated()</slot>
+    <slot>deviceInstallAction_activated()</slot>
+    <slot>deviceRemoveAction_activated()</slot>
+    <slot>Tabs_currentChanged( QWidget * )</slot>
+    <slot>DeviceList_onItem( QIconViewItem * )</slot>
+    <slot>iconList_doubleClicked( QIconViewItem * )</slot>
+    <slot>iconList_rightButtonClicked( QIconViewItem *, const QPoint &amp; )</slot>
+    <slot>iconList_clicked( QIconViewItem * )</slot>
+    <slot>iconList_contextMenuRequested( QIconViewItem *, const QPoint &amp; )</slot>
+    <slot>iconList_returnPressed( QIconViewItem * )</slot>
+    <slot>stopstartPushButton_clicked()</slot>
+    <slot>rejectacceptPushButton_clicked()</slot>
+    <slot>defaultPushButton_clicked()</slot>
+    <slot>PrintJobPrinterCombo_activated( const QString &amp; )</slot>
+    <slot>PrintSettingsPrinterCombo_activated( const QString &amp; )</slot>
+    <slot>jobList_rightButtonClicked( QListViewItem *, const QPoint &amp;, int )</slot>
+    <slot>jobList_clicked( QListViewItem * )</slot>
+    <slot>infoToolButton_clicked()</slot>
+    <slot>cancelToolButton_clicked()</slot>
+    <slot>jobList_contextMenuRequested( QListViewItem *, const QPoint &amp;, int )</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

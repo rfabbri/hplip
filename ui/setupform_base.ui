@@ -1,0 +1,965 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>SetupForm_base</class>
+<widget class="QWizard">
+    <property name="name">
+        <cstring>SetupForm_base</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>754</width>
+            <height>456</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>HP Device Manger - Printer Setup Wizard</string>
+    </property>
+    <widget class="QWidget">
+        <property name="name">
+            <cstring>ConnectionPage</cstring>
+        </property>
+        <attribute name="title">
+            <string>Choose Connection Type</string>
+        </attribute>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QButtonGroup" row="1" column="0" rowspan="1" colspan="2">
+                <property name="name">
+                    <cstring>connectionTypeButtonGroup</cstring>
+                </property>
+                <property name="title">
+                    <string>Connection (I/O) Type</string>
+                </property>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QRadioButton" row="0" column="0">
+                        <property name="name">
+                            <cstring>usbRadioButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Universal Serial Bus (USB)</string>
+                        </property>
+                    </widget>
+                    <widget class="QRadioButton" row="1" column="0">
+                        <property name="name">
+                            <cstring>netRadioButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Network/Ethernet/Wireless (direct connection or JetDirect)</string>
+                        </property>
+                    </widget>
+                    <widget class="QRadioButton" row="2" column="0">
+                        <property name="name">
+                            <cstring>parRadioButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Parallel Port (LPT)</string>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+            <spacer row="2" column="0">
+                <property name="name">
+                    <cstring>spacer12</cstring>
+                </property>
+                <property name="orientation">
+                    <enum>Vertical</enum>
+                </property>
+                <property name="sizeType">
+                    <enum>Expanding</enum>
+                </property>
+                <property name="sizeHint">
+                    <size>
+                        <width>20</width>
+                        <height>120</height>
+                    </size>
+                </property>
+            </spacer>
+            <spacer row="3" column="1">
+                <property name="name">
+                    <cstring>spacer18</cstring>
+                </property>
+                <property name="orientation">
+                    <enum>Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                    <enum>Expanding</enum>
+                </property>
+                <property name="sizeHint">
+                    <size>
+                        <width>321</width>
+                        <height>20</height>
+                    </size>
+                </property>
+            </spacer>
+            <widget class="QPushButton" row="3" column="0">
+                <property name="name">
+                    <cstring>searchFiltersPushButton2</cstring>
+                </property>
+                <property name="text">
+                    <string>Advanced...</string>
+                </property>
+            </widget>
+        </grid>
+    </widget>
+    <widget class="QWidget">
+        <property name="name">
+            <cstring>ProbedDevicesPage</cstring>
+        </property>
+        <attribute name="title">
+            <string>Select from Discovered Devices</string>
+        </attribute>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QListView" row="1" column="0" rowspan="1" colspan="4">
+                <property name="name">
+                    <cstring>probedDevicesListView</cstring>
+                </property>
+                <property name="allColumnsShowFocus">
+                    <bool>true</bool>
+                </property>
+            </widget>
+            <widget class="QPushButton" row="2" column="0">
+                <property name="name">
+                    <cstring>searchFiltersPushButton</cstring>
+                </property>
+                <property name="text">
+                    <string>Advanced...</string>
+                </property>
+            </widget>
+            <widget class="QLabel" row="0" column="0" rowspan="1" colspan="4">
+                <property name="name">
+                    <cstring>probeHeadingTextLabel</cstring>
+                </property>
+                <property name="text">
+                    <string>probeHeadingTextLabel</string>
+                </property>
+            </widget>
+            <widget class="QPushButton" row="2" column="1">
+                <property name="name">
+                    <cstring>manualFindPushButton</cstring>
+                </property>
+                <property name="text">
+                    <string>Find Manually...</string>
+                </property>
+            </widget>
+            <spacer row="2" column="2">
+                <property name="name">
+                    <cstring>spacer13</cstring>
+                </property>
+                <property name="orientation">
+                    <enum>Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                    <enum>Expanding</enum>
+                </property>
+                <property name="sizeHint">
+                    <size>
+                        <width>101</width>
+                        <height>20</height>
+                    </size>
+                </property>
+            </spacer>
+            <widget class="QPushButton" row="2" column="3">
+                <property name="name">
+                    <cstring>probeUpdatePushButton</cstring>
+                </property>
+                <property name="text">
+                    <string>Refresh</string>
+                </property>
+            </widget>
+        </grid>
+    </widget>
+    <widget class="QWidget">
+        <property name="name">
+            <cstring>PPDPage</cstring>
+        </property>
+        <attribute name="title">
+            <string>Select/Confirm PPD File</string>
+        </attribute>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QListView" row="1" column="0" rowspan="1" colspan="3">
+                <column>
+                    <property name="text">
+                        <string>PPD File</string>
+                    </property>
+                    <property name="clickable">
+                        <bool>true</bool>
+                    </property>
+                    <property name="resizable">
+                        <bool>true</bool>
+                    </property>
+                </column>
+                <column>
+                    <property name="text">
+                        <string>Description</string>
+                    </property>
+                    <property name="clickable">
+                        <bool>true</bool>
+                    </property>
+                    <property name="resizable">
+                        <bool>true</bool>
+                    </property>
+                </column>
+                <property name="name">
+                    <cstring>ppdListView</cstring>
+                </property>
+                <property name="allColumnsShowFocus">
+                    <bool>true</bool>
+                </property>
+            </widget>
+            <widget class="QPushButton" row="2" column="0">
+                <property name="name">
+                    <cstring>otherPPDPushButton</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>true</bool>
+                </property>
+                <property name="text">
+                    <string>Select Other...</string>
+                </property>
+            </widget>
+            <spacer row="2" column="1">
+                <property name="name">
+                    <cstring>spacer9</cstring>
+                </property>
+                <property name="orientation">
+                    <enum>Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                    <enum>Expanding</enum>
+                </property>
+                <property name="sizeHint">
+                    <size>
+                        <width>320</width>
+                        <height>20</height>
+                    </size>
+                </property>
+            </spacer>
+            <widget class="QPushButton" row="2" column="2">
+                <property name="name">
+                    <cstring>ppdDefaultsPushButton</cstring>
+                </property>
+                <property name="text">
+                    <string>Defaults</string>
+                </property>
+            </widget>
+            <widget class="QLabel" row="0" column="0" rowspan="1" colspan="3">
+                <property name="name">
+                    <cstring>textLabel1_5</cstring>
+                </property>
+                <property name="text">
+                    <string>Please choose the PPD file (by name and description) that most closely matches your printer. &lt;i&gt;Note: The model name of the printer may vary somewhat from the PPD file name, for example, a Deskjet 5550 may have a PPD file with the model name of Deskjet_5500_series.&lt;/i&gt;</string>
+                </property>
+                <property name="alignment">
+                    <set>WordBreak|AlignVCenter</set>
+                </property>
+            </widget>
+        </grid>
+    </widget>
+    <widget class="QWidget">
+        <property name="name">
+            <cstring>PrinterNamePage</cstring>
+        </property>
+        <attribute name="title">
+            <string>Enter Printer Information</string>
+        </attribute>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QGroupBox" row="0" column="0">
+                <property name="name">
+                    <cstring>groupBox4</cstring>
+                </property>
+                <property name="title">
+                    <string>Printer Information</string>
+                </property>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLineEdit" row="0" column="1">
+                        <property name="name">
+                            <cstring>printerNameLineEdit</cstring>
+                        </property>
+                        <property name="maxLength">
+                            <number>50</number>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="0" column="2">
+                        <property name="name">
+                            <cstring>defaultPrinterNamePushButton</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>false</bool>
+                        </property>
+                        <property name="text">
+                            <string>Default</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="1" column="0">
+                        <property name="name">
+                            <cstring>textLabel1_2</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Location:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="0" column="0">
+                        <property name="name">
+                            <cstring>textLabel1</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Printer Name:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit" row="2" column="1">
+                        <property name="name">
+                            <cstring>printerDescriptionLineEdit</cstring>
+                        </property>
+                        <property name="maxLength">
+                            <number>50</number>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit" row="1" column="1">
+                        <property name="name">
+                            <cstring>printerLocationLineEdit</cstring>
+                        </property>
+                        <property name="maxLength">
+                            <number>50</number>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="2" column="0">
+                        <property name="name">
+                            <cstring>textLabel2</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Description:</string>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QGroupBox" row="1" column="0">
+                <property name="name">
+                    <cstring>faxInfoGroupBox</cstring>
+                </property>
+                <property name="title">
+                    <string>Fax Information</string>
+                </property>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLineEdit" row="1" column="1">
+                        <property name="name">
+                            <cstring>faxNameLineEdit</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="1" column="0">
+                        <property name="name">
+                            <cstring>textLabel1_3</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Fax Name:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="3" column="0">
+                        <property name="name">
+                            <cstring>textLabel3</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Name/Company:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="2" column="0">
+                        <property name="name">
+                            <cstring>textLabel2_2</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Fax Number:</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox" row="0" column="0" rowspan="1" colspan="3">
+                        <property name="name">
+                            <cstring>faxCheckBox</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Setup PC send fax</string>
+                        </property>
+                        <property name="checked">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit" row="2" column="1">
+                        <property name="name">
+                            <cstring>faxNumberLineEdit</cstring>
+                        </property>
+                        <property name="maxLength">
+                            <number>50</number>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit" row="3" column="1">
+                        <property name="name">
+                            <cstring>faxNameCoLineEdit</cstring>
+                        </property>
+                        <property name="maxLength">
+                            <number>50</number>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="1" column="2">
+                        <property name="name">
+                            <cstring>defaultFaxNamePushButton</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>false</bool>
+                        </property>
+                        <property name="text">
+                            <string>Default</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="4" column="0">
+                        <property name="name">
+                            <cstring>textLabel1_2_2</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Location:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="5" column="0">
+                        <property name="name">
+                            <cstring>textLabel2_4</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Description:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit" row="4" column="1">
+                        <property name="name">
+                            <cstring>faxLocationLineEdit</cstring>
+                        </property>
+                        <property name="maxLength">
+                            <number>50</number>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit" row="5" column="1">
+                        <property name="name">
+                            <cstring>faxDescriptionLineEdit</cstring>
+                        </property>
+                        <property name="maxLength">
+                            <number>50</number>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QLabel" row="3" column="0">
+                <property name="name">
+                    <cstring>textLabel1_4</cstring>
+                </property>
+                <property name="text">
+                    <string>Click "Next &gt;" to install the printer on your system.</string>
+                </property>
+            </widget>
+            <spacer row="2" column="0">
+                <property name="name">
+                    <cstring>spacer14</cstring>
+                </property>
+                <property name="orientation">
+                    <enum>Vertical</enum>
+                </property>
+                <property name="sizeType">
+                    <enum>Expanding</enum>
+                </property>
+                <property name="sizeHint">
+                    <size>
+                        <width>20</width>
+                        <height>20</height>
+                    </size>
+                </property>
+            </spacer>
+        </grid>
+    </widget>
+    <widget class="QWidget">
+        <property name="name">
+            <cstring>FinishedPage</cstring>
+        </property>
+        <attribute name="title">
+            <string>Finished Adding Printer</string>
+        </attribute>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QCheckBox" row="4" column="0">
+                <property name="name">
+                    <cstring>printTestPageCheckBox</cstring>
+                </property>
+                <property name="text">
+                    <string>Send test page to printer</string>
+                </property>
+                <property name="checked">
+                    <bool>true</bool>
+                </property>
+            </widget>
+            <spacer row="3" column="0">
+                <property name="name">
+                    <cstring>spacer7</cstring>
+                </property>
+                <property name="orientation">
+                    <enum>Vertical</enum>
+                </property>
+                <property name="sizeType">
+                    <enum>Expanding</enum>
+                </property>
+                <property name="sizeHint">
+                    <size>
+                        <width>20</width>
+                        <height>20</height>
+                    </size>
+                </property>
+            </spacer>
+            <widget class="QGroupBox" row="2" column="0">
+                <property name="name">
+                    <cstring>faxGroupBox</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="title">
+                    <string>Fax Summary</string>
+                </property>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLabel" row="0" column="0">
+                        <property name="name">
+                            <cstring>textLabel7</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Fax Number:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit" row="0" column="1">
+                        <property name="name">
+                            <cstring>lineEdit5</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>NoFrame</enum>
+                        </property>
+                        <property name="readOnly">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit" row="1" column="1">
+                        <property name="name">
+                            <cstring>lineEdit6</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>NoFrame</enum>
+                        </property>
+                        <property name="readOnly">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="1" column="0">
+                        <property name="name">
+                            <cstring>textLabel6</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Fax Name:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="2" column="0">
+                        <property name="name">
+                            <cstring>textLabel8</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Name/Company:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="3" column="0">
+                        <property name="name">
+                            <cstring>textLabel8_2</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Location:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit" row="2" column="1">
+                        <property name="name">
+                            <cstring>lineEdit7</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>NoFrame</enum>
+                        </property>
+                        <property name="readOnly">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="4" column="0">
+                        <property name="name">
+                            <cstring>textLabel8_3</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Description:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit" row="3" column="1">
+                        <property name="name">
+                            <cstring>lineEdit8</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>NoFrame</enum>
+                        </property>
+                        <property name="readOnly">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit" row="4" column="1">
+                        <property name="name">
+                            <cstring>lineEdit9</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>NoFrame</enum>
+                        </property>
+                        <property name="readOnly">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QGroupBox" row="1" column="0">
+                <property name="name">
+                    <cstring>groupBox3</cstring>
+                </property>
+                <property name="title">
+                    <string>Printer Summary</string>
+                </property>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLabel" row="2" column="0">
+                        <property name="name">
+                            <cstring>textLabel4</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Description:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="1" column="0">
+                        <property name="name">
+                            <cstring>textLabel3_2</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Location:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit" row="3" column="1">
+                        <property name="name">
+                            <cstring>lineEdit4</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>NoFrame</enum>
+                        </property>
+                        <property name="readOnly">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="0" column="0">
+                        <property name="name">
+                            <cstring>textLabel2_3</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Printer Name:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit" row="2" column="1">
+                        <property name="name">
+                            <cstring>lineEdit3</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>NoFrame</enum>
+                        </property>
+                        <property name="readOnly">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit" row="1" column="1">
+                        <property name="name">
+                            <cstring>lineEdit2</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>NoFrame</enum>
+                        </property>
+                        <property name="readOnly">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit" row="0" column="1">
+                        <property name="name">
+                            <cstring>lineEdit1</cstring>
+                        </property>
+                        <property name="frameShape">
+                            <enum>NoFrame</enum>
+                        </property>
+                        <property name="readOnly">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="3" column="0">
+                        <property name="name">
+                            <cstring>textLabel5</cstring>
+                        </property>
+                        <property name="text">
+                            <string>PPD File:</string>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QLabel" row="0" column="0">
+                <property name="name">
+                    <cstring>textLabel2_5</cstring>
+                </property>
+                <property name="text">
+                    <string>The printer has been successfully installed on your system.</string>
+                </property>
+                <property name="alignment">
+                    <set>WordBreak|AlignVCenter</set>
+                </property>
+            </widget>
+        </grid>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>connectionTypeButtonGroup</sender>
+        <signal>clicked(int)</signal>
+        <receiver>SetupForm_base</receiver>
+        <slot>connectionTypeButtonGroup_clicked(int)</slot>
+    </connection>
+    <connection>
+        <sender>probedDevicesListView</sender>
+        <signal>currentChanged(QListViewItem*)</signal>
+        <receiver>SetupForm_base</receiver>
+        <slot>probedDevicesListView_currentChanged(QListViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>printerNameLineEdit</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>SetupForm_base</receiver>
+        <slot>printerNameLineEdit_textChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>defaultPrinterNamePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>SetupForm_base</receiver>
+        <slot>defaultPrinterNamePushButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>ppdListView</sender>
+        <signal>currentChanged(QListViewItem*)</signal>
+        <receiver>SetupForm_base</receiver>
+        <slot>ppdListView_currentChanged(QListViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>searchFiltersPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>SetupForm_base</receiver>
+        <slot>searchFiltersPushButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>searchFiltersPushButton2</sender>
+        <signal>clicked()</signal>
+        <receiver>SetupForm_base</receiver>
+        <slot>searchFiltersPushButton2_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>probeUpdatePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>SetupForm_base</receiver>
+        <slot>probeUpdatePushButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>manualFindPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>SetupForm_base</receiver>
+        <slot>manualFindPushButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>printerLocationLineEdit</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>SetupForm_base</receiver>
+        <slot>printerLocationLineEdit_textChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>printerDescriptionLineEdit</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>SetupForm_base</receiver>
+        <slot>printerDescriptionLineEdit_textChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>faxCheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>faxNameLineEdit</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>faxCheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>faxNumberLineEdit</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>faxCheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>faxNameCoLineEdit</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>faxNameLineEdit</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>SetupForm_base</receiver>
+        <slot>faxNameLineEdit_textChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>faxNumberLineEdit</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>SetupForm_base</receiver>
+        <slot>faxNumberLineEdit_textChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>faxNameCoLineEdit</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>SetupForm_base</receiver>
+        <slot>faxNameCoLineEdit_textChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>faxCheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>SetupForm_base</receiver>
+        <slot>faxCheckBox_toggled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>printTestPageCheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>SetupForm_base</receiver>
+        <slot>printTestPageCheckBox_toggled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>defaultFaxNamePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>SetupForm_base</receiver>
+        <slot>defaultFaxNamePushButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>otherPPDPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>SetupForm_base</receiver>
+        <slot>otherPPDPushButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>ppdDefaultsPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>SetupForm_base</receiver>
+        <slot>ppdDefaultsPushButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>faxLocationLineEdit</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>SetupForm_base</receiver>
+        <slot>faxLocationLineEdit_textChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>faxDescriptionLineEdit</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>SetupForm_base</receiver>
+        <slot>faxDescriptionLineEdit_textChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>faxCheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>faxLocationLineEdit</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>faxCheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>faxDescriptionLineEdit</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>printerNameLineEdit</tabstop>
+    <tabstop>printerLocationLineEdit</tabstop>
+    <tabstop>printerDescriptionLineEdit</tabstop>
+    <tabstop>faxCheckBox</tabstop>
+    <tabstop>faxNameLineEdit</tabstop>
+    <tabstop>faxNumberLineEdit</tabstop>
+    <tabstop>faxNameCoLineEdit</tabstop>
+    <tabstop>faxLocationLineEdit</tabstop>
+    <tabstop>faxDescriptionLineEdit</tabstop>
+    <tabstop>usbRadioButton</tabstop>
+    <tabstop>netRadioButton</tabstop>
+    <tabstop>parRadioButton</tabstop>
+    <tabstop>searchFiltersPushButton2</tabstop>
+    <tabstop>probedDevicesListView</tabstop>
+    <tabstop>searchFiltersPushButton</tabstop>
+    <tabstop>manualFindPushButton</tabstop>
+    <tabstop>probeUpdatePushButton</tabstop>
+    <tabstop>ppdListView</tabstop>
+    <tabstop>otherPPDPushButton</tabstop>
+    <tabstop>ppdDefaultsPushButton</tabstop>
+    <tabstop>defaultPrinterNamePushButton</tabstop>
+    <tabstop>defaultFaxNamePushButton</tabstop>
+    <tabstop>lineEdit4</tabstop>
+    <tabstop>lineEdit3</tabstop>
+    <tabstop>lineEdit2</tabstop>
+    <tabstop>lineEdit1</tabstop>
+    <tabstop>printTestPageCheckBox</tabstop>
+    <tabstop>lineEdit5</tabstop>
+    <tabstop>lineEdit6</tabstop>
+    <tabstop>lineEdit7</tabstop>
+    <tabstop>lineEdit8</tabstop>
+    <tabstop>lineEdit9</tabstop>
+</tabstops>
+<slots>
+    <slot>connectionTypeButtonGroup_clicked( int )</slot>
+    <slot>probedDevicesListView_currentChanged( QListViewItem * )</slot>
+    <slot>printerNameLineEdit_textChanged( const QString &amp; )</slot>
+    <slot>defaultPrinterNamePushButton_clicked()</slot>
+    <slot>ppdBrowsePushButton_clicked()</slot>
+    <slot>ppdFileLineEdit_textChanged( const QString &amp; )</slot>
+    <slot>ppdListView_currentChanged( QListViewItem * )</slot>
+    <slot>probeUpdatePushButton_clicked()</slot>
+    <slot>searchFiltersPushButton_clicked()</slot>
+    <slot>searchFiltersPushButton2_clicked()</slot>
+    <slot>manualFindPushButton_clicked()</slot>
+    <slot>printerLocationLineEdit_textChanged( const QString &amp; )</slot>
+    <slot>printerDescriptionLineEdit_textChanged( const QString &amp; )</slot>
+    <slot>faxNameLineEdit_textChanged( const QString &amp; )</slot>
+    <slot>faxNumberLineEdit_textChanged( const QString &amp; )</slot>
+    <slot>faxNameCoLineEdit_textChanged( const QString &amp; )</slot>
+    <slot>printTestPageCheckBox_clicked()</slot>
+    <slot>faxCheckBox_clicked()</slot>
+    <slot>faxCheckBox_toggled( bool )</slot>
+    <slot>printTestPageCheckBox_toggled( bool )</slot>
+    <slot>defaultFaxNamePushButton_clicked()</slot>
+    <slot>otherPPDPushButton_clicked()</slot>
+    <slot>ppdDefaultsPushButton_clicked()</slot>
+    <slot>faxLocationLineEdit_textChanged( const QString &amp; )</slot>
+    <slot>faxDescriptionLineEdit_textChanged( const QString &amp; )</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

@@ -1,0 +1,654 @@
+<ui version="4.0" >
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog" >
+  <property name="windowModality" >
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>HP Device Manager - Setup</string>
+  </property>
+  <layout class="QGridLayout" >
+   <item row="0" column="0" colspan="5" >
+    <widget class="QStackedWidget" name="StackedWidget" >
+     <property name="currentIndex" >
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="DiscoveryPage" >
+      <layout class="QGridLayout" >
+       <item row="0" column="0" colspan="2" >
+        <widget class="QLabel" name="label" >
+         <property name="font" >
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="text" >
+          <string>Device Discovery</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="2" >
+        <widget class="Line" name="line" >
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2" >
+        <widget class="QGroupBox" name="groupBox" >
+         <property name="title" >
+          <string>Connection (I/O) Type</string>
+         </property>
+         <layout class="QGridLayout" >
+          <item row="0" column="0" >
+           <widget class="QRadioButton" name="UsbRadioButton" >
+            <property name="text" >
+             <string>Universal Serial Bus (USB)</string>
+            </property>
+            <property name="checked" >
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" >
+           <widget class="QRadioButton" name="NetworkRadioButton" >
+            <property name="text" >
+             <string>Network/Ethernet/Wireless network (direct connection or JetDirect)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0" >
+           <widget class="QRadioButton" name="ParallelRadioButton" >
+            <property name="enabled" >
+             <bool>true</bool>
+            </property>
+            <property name="text" >
+             <string>Parallel Port (LPT)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0" >
+           <widget class="QRadioButton" name="WirelessButton" >
+            <property name="text" >
+             <string>Wireless/802.11 (requires a temporary USB connection and is only available for select devices)</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="3" column="0" >
+        <widget class="QPushButton" name="AdvancedButton" >
+         <property name="text" >
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1" >
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>381</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="4" column="0" colspan="2" >
+        <widget class="QStackedWidget" name="AdvancedStackedWidget" >
+         <property name="currentIndex" >
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="page" >
+          <layout class="QGridLayout" >
+           <item row="0" column="0" >
+            <widget class="QGroupBox" name="DiscoveryOptionsGroupBox" >
+             <property name="title" >
+              <string>Discovery Options</string>
+             </property>
+             <layout class="QGridLayout" >
+              <item row="0" column="0" >
+               <layout class="QHBoxLayout" >
+                <item>
+                 <widget class="QLabel" name="label_2" >
+                  <property name="text" >
+                   <string>Search term:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="SearchLineEdit" />
+                </item>
+               </layout>
+              </item>
+              <item row="0" column="1" colspan="2" >
+               <layout class="QHBoxLayout" >
+                <item>
+                 <widget class="QLabel" name="DeviceTypeLabel" >
+                  <property name="text" >
+                   <string>Type:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="DeviceTypeComboBox" />
+                </item>
+               </layout>
+              </item>
+              <item row="1" column="0" >
+               <layout class="QHBoxLayout" >
+                <item>
+                 <widget class="QLabel" name="NetworkDiscoveryMethodLabel" >
+                  <property name="text" >
+                   <string>Network discovery method:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="NetworkDiscoveryMethodComboBox" >
+                  <item>
+                   <property name="text" >
+                    <string>SLP</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text" >
+                    <string>mDNS/Bonjour</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="1" column="1" >
+               <layout class="QHBoxLayout" >
+                <item>
+                 <widget class="QLabel" name="NetworkTimeoutLabel" >
+                  <property name="text" >
+                   <string>Timeout:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="NetworkTimeoutSpinBox" >
+                  <property name="suffix" >
+                   <string>sec</string>
+                  </property>
+                  <property name="minimum" >
+                   <number>1</number>
+                  </property>
+                  <property name="maximum" >
+                   <number>90</number>
+                  </property>
+                  <property name="value" >
+                   <number>5</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="1" column="2" >
+               <layout class="QHBoxLayout" >
+                <item>
+                 <widget class="QLabel" name="NetworkTTLLabel" >
+                  <property name="text" >
+                   <string>TTL:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="NetworkTTLSpinBox" >
+                  <property name="suffix" >
+                   <string/>
+                  </property>
+                  <property name="minimum" >
+                   <number>1</number>
+                  </property>
+                  <property name="maximum" >
+                   <number>8</number>
+                  </property>
+                  <property name="value" >
+                   <number>4</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="1" column="0" >
+            <widget class="QGroupBox" name="ManualGroupBox" >
+             <property name="title" >
+              <string>Manual Discovery</string>
+             </property>
+             <property name="checkable" >
+              <bool>true</bool>
+             </property>
+             <layout class="QGridLayout" >
+              <item row="0" column="0" >
+               <widget class="QLabel" name="ManualParamLabel" >
+                <property name="text" >
+                 <string>Parameter:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1" >
+               <widget class="QLineEdit" name="ManualParamLineEdit" />
+              </item>
+              <item row="0" column="2" >
+               <widget class="QLabel" name="JetDirectLabel" >
+                <property name="text" >
+                 <string>Jetdirect port:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="3" >
+               <widget class="QSpinBox" name="JetDirectSpinBox" >
+                <property name="minimum" >
+                 <number>1</number>
+                </property>
+                <property name="maximum" >
+                 <number>3</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="page_4" />
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="2" >
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>478</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_2" >
+      <layout class="QGridLayout" >
+       <item row="0" column="0" colspan="2" >
+        <widget class="QLabel" name="label_4" >
+         <property name="font" >
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="text" >
+          <string>Select From Discovered Devices</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="3" >
+        <widget class="Line" name="line_2" >
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="3" >
+        <widget class="QTableWidget" name="DevicesTableWidget" >
+         <property name="alternatingRowColors" >
+          <bool>true</bool>
+         </property>
+         <property name="selectionMode" >
+          <enum>QAbstractItemView::SingleSelection</enum>
+         </property>
+         <property name="selectionBehavior" >
+          <enum>QAbstractItemView::SelectRows</enum>
+         </property>
+         <property name="sortingEnabled" >
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" >
+        <layout class="QHBoxLayout" >
+         <item>
+          <widget class="QLabel" name="DevicesFoundIcon" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>16</width>
+             <height>16</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>16</width>
+             <height>16</height>
+            </size>
+           </property>
+           <property name="frameShape" >
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="text" >
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="DevicesFoundLabel" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text" >
+            <string>Found %1 devices on the %1 bus.</string>
+           </property>
+           <property name="wordWrap" >
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="1" >
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType" >
+          <enum>QSizePolicy::Preferred</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>21</width>
+           <height>28</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="3" column="2" >
+        <widget class="QPushButton" name="RefreshButton" >
+         <property name="text" >
+          <string>Refresh</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_3" >
+      <layout class="QGridLayout" >
+       <item row="0" column="0" >
+        <widget class="QLabel" name="label_5" >
+         <property name="font" >
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="text" >
+          <string>Setup Device</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="Line" name="line_3" >
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" >
+        <widget class="QGroupBox" name="groupBox_3" >
+         <property name="title" >
+          <string>Printer Setup</string>
+         </property>
+         <layout class="QGridLayout" >
+          <item row="0" column="0" >
+           <widget class="QLabel" name="label_6" >
+            <property name="text" >
+             <string>Printer name:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" colspan="2" >
+           <widget class="QLineEdit" name="PrinterNameLineEdit" />
+          </item>
+          <item row="1" column="0" >
+           <widget class="QLabel" name="label_7" >
+            <property name="text" >
+             <string>Description:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1" colspan="2" >
+           <widget class="QLineEdit" name="PrinterDescriptionLineEdit" />
+          </item>
+          <item row="2" column="0" >
+           <widget class="QLabel" name="label_8" >
+            <property name="text" >
+             <string>Location:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1" colspan="2" >
+           <widget class="QLineEdit" name="PrinterLocationLineEdit" />
+          </item>
+          <item row="3" column="0" >
+           <widget class="QLabel" name="label_3" >
+            <property name="text" >
+             <string>PPD file:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1" >
+           <widget class="QLineEdit" name="PPDFileLineEdit" >
+            <property name="readOnly" >
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2" >
+           <widget class="QToolButton" name="OtherPPDButton" >
+            <property name="text" >
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="3" column="0" >
+        <widget class="QGroupBox" name="SetupFaxGroupBox" >
+         <property name="title" >
+          <string>Fax Setup</string>
+         </property>
+         <property name="checkable" >
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" >
+          <item row="0" column="0" >
+           <widget class="QLabel" name="label_9" >
+            <property name="text" >
+             <string>Fax name:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" colspan="3" >
+           <widget class="QLineEdit" name="FaxNameLineEdit" />
+          </item>
+          <item row="1" column="0" >
+           <widget class="QLabel" name="label_10" >
+            <property name="text" >
+             <string>Fax number:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1" >
+           <widget class="QLineEdit" name="FaxNumberLineEdit" />
+          </item>
+          <item row="1" column="2" >
+           <widget class="QLabel" name="label_11" >
+            <property name="text" >
+             <string>Name/company:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3" >
+           <widget class="QLineEdit" name="NameCompanyLineEdit" />
+          </item>
+          <item row="2" column="0" >
+           <widget class="QLabel" name="label_12" >
+            <property name="text" >
+             <string>Description:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1" colspan="3" >
+           <widget class="QLineEdit" name="FaxDescriptionLineEdit" />
+          </item>
+          <item row="3" column="0" >
+           <widget class="QLabel" name="label_13" >
+            <property name="text" >
+             <string>Location:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1" colspan="3" >
+           <widget class="QLineEdit" name="FaxLocationLineEdit" />
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="4" column="0" >
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>341</width>
+           <height>16</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="5" column="0" >
+        <widget class="QCheckBox" name="SendTestPageCheckBox" >
+         <property name="text" >
+          <string>Send test page to printer</string>
+         </property>
+         <property name="checked" >
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_5" >
+      <layout class="QGridLayout" >
+       <item row="0" column="0" >
+        <widget class="QLabel" name="label_15" >
+         <property name="font" >
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="text" >
+          <string>Select Printer/Fax Queues to Remove</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="Line" name="line_4" >
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" >
+        <widget class="QTableWidget" name="RemoveDevicesTableWidget" >
+         <property name="alternatingRowColors" >
+          <bool>true</bool>
+         </property>
+         <property name="selectionMode" >
+          <enum>QAbstractItemView::SingleSelection</enum>
+         </property>
+         <property name="selectionBehavior" >
+          <enum>QAbstractItemView::SelectRows</enum>
+         </property>
+         <property name="sortingEnabled" >
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="1" column="0" >
+    <widget class="QLabel" name="StepText" >
+     <property name="text" >
+      <string>Step %1 of %2</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>181</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="2" >
+    <widget class="QPushButton" name="BackButton" >
+     <property name="text" >
+      <string>&lt; Back</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3" >
+    <widget class="QPushButton" name="NextButton" >
+     <property name="text" >
+      <string>Next ></string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4" >
+    <widget class="QPushButton" name="CancelButton" >
+     <property name="text" >
+      <string>Cancel</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

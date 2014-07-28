@@ -1,0 +1,6 @@
+libapdk_la-models.lo .libs/libapdk_la-models.o: prnt/hpijs/models.cpp \
+  prnt/hpijs/models.h prnt/hpijs/config.h
+
+prnt/hpijs/models.h:
+
+prnt/hpijs/config.h:

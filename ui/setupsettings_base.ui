@@ -1,0 +1,417 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>SetupSettings_base</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>SetupSettings_base</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>473</width>
+            <height>421</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>HP Device Manager - Setup Filters, Search and Settings</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QButtonGroup" row="0" column="0" rowspan="1" colspan="4">
+            <property name="name">
+                <cstring>filterButtonGroup</cstring>
+            </property>
+            <property name="title">
+                <string>Discovery Filter</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QRadioButton" row="0" column="0" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>allRadioButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Discover all devices</string>
+                    </property>
+                    <property name="checked">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QRadioButton" row="1" column="0" rowspan="1" colspan="3">
+                    <property name="name">
+                        <cstring>filterRadioButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Only discover devices that support the following functionality:</string>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget" row="2" column="1">
+                    <property name="name">
+                        <cstring>layout8</cstring>
+                    </property>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>8</number>
+                        </property>
+                        <widget class="QCheckBox" row="3" column="0">
+                            <property name="name">
+                                <cstring>copyCheckBox</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>false</bool>
+                            </property>
+                            <property name="text">
+                                <string>PC Initiated Copying</string>
+                            </property>
+                        </widget>
+                        <widget class="QCheckBox" row="2" column="0">
+                            <property name="name">
+                                <cstring>pcardCheckBox</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>false</bool>
+                            </property>
+                            <property name="text">
+                                <string>PC Photocard Access</string>
+                            </property>
+                        </widget>
+                        <widget class="QCheckBox" row="1" column="0">
+                            <property name="name">
+                                <cstring>scanCheckBox</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>false</bool>
+                            </property>
+                            <property name="text">
+                                <string>Scan to PC</string>
+                            </property>
+                        </widget>
+                        <widget class="QCheckBox" row="0" column="0">
+                            <property name="name">
+                                <cstring>faxCheckBox</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>false</bool>
+                            </property>
+                            <property name="text">
+                                <string>PC Send Fax</string>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+                <spacer row="2" column="2">
+                    <property name="name">
+                        <cstring>spacer14</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>301</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+            </grid>
+        </widget>
+        <widget class="QPushButton" row="4" column="3">
+            <property name="name">
+                <cstring>okPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>OK</string>
+            </property>
+            <property name="default">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="4" column="2">
+            <property name="name">
+                <cstring>cancelPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Cancel</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="4" column="0">
+            <property name="name">
+                <cstring>defaultsPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Defaults</string>
+            </property>
+        </widget>
+        <spacer row="4" column="1">
+            <property name="name">
+                <cstring>spacer16</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>140</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QGroupBox" row="1" column="0" rowspan="1" colspan="4">
+            <property name="name">
+                <cstring>groupBox2</cstring>
+            </property>
+            <property name="title">
+                <string>Discovery Search</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>textLabel6</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Search Term:</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="0" column="1">
+                    <property name="name">
+                        <cstring>searchTermLineEdit</cstring>
+                    </property>
+                    <property name="maxLength">
+                        <number>255</number>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QGroupBox" row="2" column="0" rowspan="1" colspan="4">
+            <property name="name">
+                <cstring>groupBox3</cstring>
+            </property>
+            <property name="title">
+                <string>Network Discovery Settings</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget" row="0" column="0">
+                    <property name="name">
+                        <cstring>layout10</cstring>
+                    </property>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QSpinBox" row="1" column="1">
+                            <property name="name">
+                                <cstring>timeoutSpinBox</cstring>
+                            </property>
+                            <property name="maxValue">
+                                <number>45</number>
+                            </property>
+                            <property name="minValue">
+                                <number>1</number>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="0" column="0">
+                            <property name="name">
+                                <cstring>textLabel7</cstring>
+                            </property>
+                            <property name="text">
+                                <string>TTL:</string>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="1" column="0">
+                            <property name="name">
+                                <cstring>textLabel8</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Timeout (secs):</string>
+                            </property>
+                        </widget>
+                        <widget class="QSpinBox" row="0" column="1">
+                            <property name="name">
+                                <cstring>ttlSpinBox</cstring>
+                            </property>
+                            <property name="maxValue">
+                                <number>255</number>
+                            </property>
+                            <property name="minValue">
+                                <number>1</number>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+                <spacer row="0" column="1">
+                    <property name="name">
+                        <cstring>spacer15</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>261</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+            </grid>
+        </widget>
+        <spacer row="3" column="0">
+            <property name="name">
+                <cstring>spacer12</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>16</height>
+                </size>
+            </property>
+        </spacer>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>cancelPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>SetupSettings_base</receiver>
+        <slot>reject()</slot>
+    </connection>
+    <connection>
+        <sender>okPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>SetupSettings_base</receiver>
+        <slot>accept()</slot>
+    </connection>
+    <connection>
+        <sender>filterRadioButton</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>faxCheckBox</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>filterRadioButton</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>scanCheckBox</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>filterRadioButton</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>pcardCheckBox</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>filterRadioButton</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>copyCheckBox</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>faxCheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>SetupSettings_base</receiver>
+        <slot>faxCheckBox_toggled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>scanCheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>SetupSettings_base</receiver>
+        <slot>scanCheckBox_toggled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>pcardCheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>SetupSettings_base</receiver>
+        <slot>pcardCheckBox_toggled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>copyCheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>SetupSettings_base</receiver>
+        <slot>copyCheckBox_toggled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>filterButtonGroup</sender>
+        <signal>clicked(int)</signal>
+        <receiver>SetupSettings_base</receiver>
+        <slot>filterButtonGroup_clicked(int)</slot>
+    </connection>
+    <connection>
+        <sender>searchTermLineEdit</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>SetupSettings_base</receiver>
+        <slot>searchTermLineEdit_textChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>ttlSpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>SetupSettings_base</receiver>
+        <slot>ttlSpinBox_valueChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>timeoutSpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>SetupSettings_base</receiver>
+        <slot>timeoutSpinBox_valueChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>defaultsPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>SetupSettings_base</receiver>
+        <slot>defaultsPushButton_clicked()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>allRadioButton</tabstop>
+    <tabstop>faxCheckBox</tabstop>
+    <tabstop>scanCheckBox</tabstop>
+    <tabstop>pcardCheckBox</tabstop>
+    <tabstop>copyCheckBox</tabstop>
+    <tabstop>searchTermLineEdit</tabstop>
+    <tabstop>ttlSpinBox</tabstop>
+    <tabstop>timeoutSpinBox</tabstop>
+    <tabstop>cancelPushButton</tabstop>
+    <tabstop>okPushButton</tabstop>
+</tabstops>
+<includes>
+    <include location="local" impldecl="in implementation">setupsettings_base.ui.h</include>
+</includes>
+<slots>
+    <slot>faxCheckBox_toggled( bool )</slot>
+    <slot>scanCheckBox_toggled( bool )</slot>
+    <slot>pcardCheckBox_toggled( bool )</slot>
+    <slot>copyCheckBox_toggled( bool )</slot>
+    <slot>filterButtonGroup_clicked( int )</slot>
+    <slot>searchTermLineEdit_textChanged( const QString &amp; )</slot>
+    <slot>ttlSpinBox_valueChanged( int )</slot>
+    <slot>timeoutSpinBox_valueChanged( int )</slot>
+    <slot>defaultsPushButton_clicked()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

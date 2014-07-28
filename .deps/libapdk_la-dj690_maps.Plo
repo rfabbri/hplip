@@ -1,0 +1,74 @@
+libapdk_la-dj690_maps.lo .libs/libapdk_la-dj690_maps.o:  \
+ prnt/hpijs/dj690_maps.cpp prnt/hpijs/config.h prnt/hpijs/global_types.h \
+  prnt/hpijs/models.h prnt/hpijs/modes.h prnt/hpijs/auto-include.h \
+  /usr/include/inttypes.h /usr/include/sys/cdefs.h \
+  /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/Availability.h \
+  /usr/include/AvailabilityInternal.h /usr/include/_types.h \
+  /usr/include/sys/_types.h /usr/include/machine/_types.h \
+  /usr/include/i386/_types.h /usr/include/sys/_types/_wchar_t.h \
+  /usr/include/stdint.h /usr/include/sys/_types/_int8_t.h \
+  /usr/include/sys/_types/_int16_t.h /usr/include/sys/_types/_int32_t.h \
+  /usr/include/sys/_types/_int64_t.h /usr/include/_types/_uint8_t.h \
+  /usr/include/_types/_uint16_t.h /usr/include/_types/_uint32_t.h \
+  /usr/include/_types/_uint64_t.h /usr/include/sys/_types/_intptr_t.h \
+  /usr/include/sys/_types/_uintptr_t.h /usr/include/_types/_intmax_t.h \
+  /usr/include/_types/_uintmax_t.h
+
+prnt/hpijs/config.h:
+
+prnt/hpijs/global_types.h:
+
+prnt/hpijs/models.h:
+
+prnt/hpijs/modes.h:
+
+prnt/hpijs/auto-include.h:
+
+/usr/include/inttypes.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/sys/_symbol_aliasing.h:
+
+/usr/include/sys/_posix_availability.h:
+
+/usr/include/Availability.h:
+
+/usr/include/AvailabilityInternal.h:
+
+/usr/include/_types.h:
+
+/usr/include/sys/_types.h:
+
+/usr/include/machine/_types.h:
+
+/usr/include/i386/_types.h:
+
+/usr/include/sys/_types/_wchar_t.h:
+
+/usr/include/stdint.h:
+
+/usr/include/sys/_types/_int8_t.h:
+
+/usr/include/sys/_types/_int16_t.h:
+
+/usr/include/sys/_types/_int32_t.h:
+
+/usr/include/sys/_types/_int64_t.h:
+
+/usr/include/_types/_uint8_t.h:
+
+/usr/include/_types/_uint16_t.h:
+
+/usr/include/_types/_uint32_t.h:
+
+/usr/include/_types/_uint64_t.h:
+
+/usr/include/sys/_types/_intptr_t.h:
+
+/usr/include/sys/_types/_uintptr_t.h:
+
+/usr/include/_types/_intmax_t.h:
+
+/usr/include/_types/_uintmax_t.h:

@@ -1,0 +1,6 @@
+libapdk_la-breaks_open.lo .libs/libapdk_la-breaks_open.o:  \
+ prnt/hpijs/breaks_open.cpp prnt/hpijs/config.h prnt/hpijs/resources.h
+
+prnt/hpijs/config.h:
+
+prnt/hpijs/resources.h:
