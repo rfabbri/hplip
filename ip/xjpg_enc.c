@@ -164,10 +164,10 @@ typedef struct {
     int   wino_chrom_quant[64];
     int   wino_chrom_quant_thres[64];
 
-    BOOL  input_subsampled;
-    BOOL  fDenali;
-    BOOL  fOutputDNL;
-    BOOL  fOutputG3APP1;
+    TBOOL  input_subsampled;
+    TBOOL  fDenali;
+    TBOOL  fOutputDNL;
+    TBOOL  fOutputG3APP1;
     DWORD dwDummyHeaderBytes;
     UINT  rows_in_mcu;         /* # rows & cols in each MCU */
     UINT  cols_in_mcu;
@@ -211,13 +211,13 @@ typedef struct {
     UINT rows_received;
     UINT rows_loaded;
     UINT mcus_sent;
-    BOOL loading_rows;
+    TBOOL loading_rows;
 
     /**** Miscellaneous ****/
 
     IP_IMAGE_TRAITS traits;
     BYTE *in_rows_ap[4][32];   /* row-buffers [component][row] */
-    BOOL  fDidHeader;          /* output the header yet? */
+    TBOOL  fDidHeader;          /* output the header yet? */
     DWORD dwInNextPos;         /* next read pos in input file */
     DWORD dwOutNextPos;        /* next write pos in output file */
     DWORD dwValidChk;          /* struct validity check value */
@@ -1731,7 +1731,7 @@ static WORD jpgEncode_setDefaultInputTraits (
     if (g->xRes < 0) g->xRes = 300;
     if (g->yRes < 0) g->yRes = 300;
 
-    g->fDidHeader = FALSE;
+    g->fDidHeader = TFALSE;
     return IP_DONE;
 
     fatal_error:
@@ -1758,9 +1758,9 @@ static WORD jpgEncode_setXformSpec (
     qfacs                 =       aXformInfo[IP_JPG_ENCODE_QUALITY_FACTORS].dword;
     g->sample_factors     =       aXformInfo[IP_JPG_ENCODE_SAMPLE_FACTORS].dword;
     g->input_subsampled   =       aXformInfo[IP_JPG_ENCODE_ALREADY_SUBSAMPLED].dword;
-    g->fDenali            = (BOOL)aXformInfo[IP_JPG_ENCODE_FOR_DENALI].dword;
-    g->fOutputDNL         = (BOOL)aXformInfo[IP_JPG_ENCODE_OUTPUT_DNL].dword;
-    g->fOutputG3APP1      = (BOOL)aXformInfo[IP_JPG_ENCODE_FOR_COLOR_FAX].dword;
+    g->fDenali            = (TBOOL)aXformInfo[IP_JPG_ENCODE_FOR_DENALI].dword;
+    g->fOutputDNL         = (TBOOL)aXformInfo[IP_JPG_ENCODE_OUTPUT_DNL].dword;
+    g->fOutputG3APP1      = (TBOOL)aXformInfo[IP_JPG_ENCODE_FOR_COLOR_FAX].dword;
     g->dwDummyHeaderBytes =       aXformInfo[IP_JPG_ENCODE_DUMMY_HEADER_LEN].dword;
 
     g->dc_q_factor = (BYTE)(qfacs >> 8);
@@ -1907,7 +1907,7 @@ static WORD jpgEncode_convert (
 
         g->rows_loaded = 0;
         g->mcus_sent = 0;
-        g->loading_rows = TRUE;
+        g->loading_rows = TTRUE;
         write_init (g);
         zero_prior_DC (g);
         encode_init (g);
@@ -1977,7 +1977,7 @@ static WORD jpgEncode_convert (
         *pdwInputUsed    = 0;
         *pdwInputNextPos = 0;
         g->dwInNextPos = 0;
-        g->fDidHeader = TRUE;
+        g->fDidHeader = TTRUE;
 
         return IP_READY_FOR_DATA;
     }
@@ -2008,7 +2008,7 @@ static WORD jpgEncode_convert (
 
             if (n_loaded != 0) {
                 /* some rows were loaded; start compressing rows now */
-                g->loading_rows = FALSE;
+                g->loading_rows = TFALSE;
                 /* boost rows_loaded to next multiple of rows_in_mcu so
                  * n_loaded will be 0 next time around */
                 g->rows_loaded += g->rows_in_mcu - n_loaded;
@@ -2054,7 +2054,7 @@ static WORD jpgEncode_convert (
 
             if (n_loaded == 0) {
                 /* # rows loaded is rows_in_mcu, but the mod wrapped to zero */
-                g->loading_rows = FALSE;  /* start compressing rows now */
+                g->loading_rows = TFALSE;  /* start compressing rows now */
             }
         }
     }
@@ -2077,7 +2077,7 @@ static WORD jpgEncode_convert (
 
         g->mcus_sent += 1;
         if (g->mcus_sent >= g->mcus_in_row) {
-            g->loading_rows = TRUE;
+            g->loading_rows = TTRUE;
             g->mcus_sent = 0;
         }
     }

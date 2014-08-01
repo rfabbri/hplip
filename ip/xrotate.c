@@ -141,7 +141,7 @@ typedef struct {
     int      xLR, yLR;           /* LR corner of image (computed) */
     int      iOutWidth;          /* width of output image */
     int      iOutHeight;         /* height of output image */
-    BOOL     bRotateFast;        /* rotate fast? (produces worse jaggies) */
+    TBOOL     bRotateFast;        /* rotate fast? (produces worse jaggies) */
 
     int      hSlopeDx, hSlopeDy; /* input-change for moving right 1 pix in output (16.16) */
     int      vSlopeDx, vSlopeDy; /* input-change for moving down 1 pix in output (16.16) */
@@ -667,7 +667,7 @@ FUNC_STATUS WORD rotate_convert (
                     pDest += g->bytesPerPixel;
                 } else {
                     /* unsupported bits per pixel */
-                    INSURE (FALSE);
+                    INSURE (TFALSE);
                 }
             }
             else   /* current pos is outside strip, so output a white pixel (padding) */

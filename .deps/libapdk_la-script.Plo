@@ -1,0 +1,1 @@
+libapdk_la-script.lo .libs/libapdk_la-script.o: prnt/hpijs/script.cpp

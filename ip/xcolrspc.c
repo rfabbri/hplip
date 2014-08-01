@@ -139,10 +139,10 @@ typedef struct {
     DWORD     dwValidChk;       /* struct validity check value */
 } COL_INST, *PCOL_INST;
 
-static BOOL fInited = FALSE;
+static TBOOL fInited = TFALSE;
 
 //Neutral Shift Data Definition
-#define NEUTRAL_SHIFT_SEND   TRUE  
+#define NEUTRAL_SHIFT_SEND   TTRUE  
 
 
 // constants to convert [r,g,b] into Y
@@ -869,7 +869,7 @@ static WORD color_openXform (
 
     if (! fInited) {
         initTables ();
-        fInited = TRUE;
+        fInited = TTRUE;
     }
 
     INSURE (pXform != NULL);

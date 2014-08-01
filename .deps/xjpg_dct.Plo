@@ -1,0 +1,3 @@
+xjpg_dct.lo .libs/xjpg_dct.o: ip/xjpg_dct.c ip/xjpg_dct.h
+
+ip/xjpg_dct.h:

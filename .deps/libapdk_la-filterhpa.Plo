@@ -1,0 +1,2 @@
+libapdk_la-filterhpa.lo .libs/libapdk_la-filterhpa.o:  \
+ prnt/hpijs/filterhpa.cpp

@@ -703,3 +703,5 @@ bugout:
    return stat;
 }
 
+int (*getSIData)(char **pData , int *pDataLen, char **pModeSwitch, int *pModeSwitchLen);
+void (*freeSIData)(char *pData, char *pModeSwitch);

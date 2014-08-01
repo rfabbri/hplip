@@ -185,7 +185,7 @@ typedef struct {
     long    lOutRows;         /* number of rows we've output */
     int     iInPages;         /* number of pages we've received */
     int     iOutPages;        /* number of pages we've output */
-    BOOL    pendingInsert;    /* ret IP_WRITE_INSERT_OK after outbuf empty? */
+    TBOOL    pendingInsert;    /* ret IP_WRITE_INSERT_OK after outbuf empty? */
         
 } INST, *PINST;
 
@@ -764,9 +764,9 @@ EXPORT(WORD) ipConvert (
     int         iXform;
     WORD        result;
     PGENBUF     pgbIn, pgbOut;
-    BOOL        atTheHead, atTheTail;
+    TBOOL        atTheHead, atTheTail;
     PXFORM_INFO pXform, pPriorXform, pNextXform;
-    BOOL        needInput, selectCnvState;
+    TBOOL        needInput, selectCnvState;
     DWORD       dwBytes;
     int         i;
     DWORD       n;
@@ -802,7 +802,7 @@ EXPORT(WORD) ipConvert (
      /* Beginning of Main Loop */
     /**************************/
 
-    while (TRUE) {
+    while (TTRUE) {
 
     /**** Output any data in the output genbuf ****/
 
@@ -851,7 +851,7 @@ EXPORT(WORD) ipConvert (
     }
 
     if (g->pendingInsert) {
-        g->pendingInsert = FALSE;
+        g->pendingInsert = TFALSE;
         ipResult |= IP_WRITE_INSERT_OK;
     }
 
@@ -1132,7 +1132,7 @@ EXPORT(WORD) ipConvert (
 
     /**** Handle Results of Conversion Call ****/
 
-    selectCnvState = FALSE;
+    selectCnvState = TFALSE;
 
     if (pXform->eState == XS_PARSING_HEADER) {
 
@@ -1204,7 +1204,7 @@ EXPORT(WORD) ipConvert (
                 ipResult |= IP_PARSED_HEADER;
             }
 
-            selectCnvState = TRUE;
+            selectCnvState = TTRUE;
         }
 
     } else {    /* state is XS_CONVERTING or XS_CONV_NOT_RFD or XS_FLUSHING */
@@ -1231,7 +1231,7 @@ EXPORT(WORD) ipConvert (
             if (result & IP_NEW_OUTPUT_PAGE)
                 g->iOutPages += 1;
             if (result & IP_WRITE_INSERT_OK & g->wResultMask)
-                g->pendingInsert = TRUE;
+                g->pendingInsert = TTRUE;
         } else if (result & IP_NEW_OUTPUT_PAGE) {
             /* this xform hit end of page, so tell next xform about it */
             PRINT0 (_T("ipConvert: xform %d hit end of page\n"), iXform);
@@ -1242,7 +1242,7 @@ EXPORT(WORD) ipConvert (
             PRINT0 (_T("ipConvert: xform %d is done\n"), iXform);
             pXform->eState = XS_DONE;
         } else if (pXform->eState != XS_FLUSHING)
-            selectCnvState = TRUE;
+            selectCnvState = TTRUE;
     } /* if state is 'parsing header' */
 
     if (selectCnvState) {
@@ -1253,7 +1253,7 @@ EXPORT(WORD) ipConvert (
                          ? XS_CONVERTING : XS_CONV_NOT_RFD;
     }
 
-    }  /* end of while (TRUE) */
+    }  /* end of while (TTRUE) */
     exitLoop: ;
 
       /********************/

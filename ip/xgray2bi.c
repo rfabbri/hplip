@@ -173,7 +173,7 @@ static void diffuseRow (
     BYTE    *outptr;
     BYTE    outvalue;
     int     mask;
-    BOOL    second;   /* computing 2nd nibble in byte? */
+    TBOOL    second;   /* computing 2nd nibble in byte? */
 
     /* The diffusion algorithm below uses the following 6 weights:
      *
@@ -250,7 +250,7 @@ static void diffuseRow (
     outptr   = baOutBuf;
     eptr     = iaErrBuf + 2;
     outvalue = 0;
-    second   = FALSE;
+    second   = TFALSE;
 
     cur = ((unsigned)inptr[0] << 4) + eptr[0];
     r   = ((unsigned)inptr[1] << 4) + eptr[1];
@@ -267,12 +267,12 @@ static void diffuseRow (
         if (! second) {
             /* we just computed the left half of the byte */
             outvalue <<= 4;
-            second = TRUE;
+            second = TTRUE;
         } else {
             /* we just computed the right half of the byte, so store it */
             *outptr++ = outvalue;
             outvalue = 0;
-            second = FALSE;
+            second = TFALSE;
         }
     } /* end of for */
 

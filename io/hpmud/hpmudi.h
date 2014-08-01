@@ -209,8 +209,8 @@ int  __attribute__ ((visibility ("hidden"))) generalize_serial(const char *sz, c
 int __attribute__ ((visibility ("hidden"))) get_uri_model(const char *uri, char *buf, int bufSize);
 int __attribute__ ((visibility ("hidden"))) get_uri_serial(const char *uri, char *buf, int bufSize);
 enum HPMUD_RESULT __attribute__ ((visibility ("hidden"))) service_to_channel(mud_device *pd, const char *sn, HPMUD_CHANNEL *index);
-int (*getSIData)(char **pData , int *pDataLen, char **pModeSwitch, int *pModeSwitchLen);
-void (*freeSIData)(char *pData, char *pModeSwitch);
+extern int (*getSIData)(char **pData , int *pDataLen, char **pModeSwitch, int *pModeSwitchLen);
+extern void (*freeSIData)(char *pData, char *pModeSwitch);
 
 #endif // _HPMUDI_H
 

@@ -28,7 +28,7 @@ Author: Naga Samrat Chowdary Narla, Sarbeswar Meher
 #include "hpmud.h"
 #include "hpmudi.h"
 #include <dlfcn.h>
-#include "utils.h"
+#include <common/utils.h>
 
 mud_device_vf __attribute__ ((visibility ("hidden"))) musb_mud_device_vf =
 {

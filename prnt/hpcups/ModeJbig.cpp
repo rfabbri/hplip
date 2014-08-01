@@ -37,7 +37,7 @@
 #include "hpjbig_wrapper.h"
 #include <dlfcn.h>
 #include "Utils.h"
-#include "utils.h"
+#include <common/utils.h>
 
 extern "C"
 {

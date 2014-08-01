@@ -127,7 +127,7 @@ typedef struct {
     IP_IMAGE_TRAITS traits;  /* traits of the image */
     DWORD  dwInNextPos;      /* file pos for subsequent input */
     DWORD  dwOutNextPos;     /* file pos for subsequent output */
-    BOOL   fDidHeader;       /* already processed the header? */
+    TBOOL   fDidHeader;       /* already processed the header? */
     BYTE  *pPlanes;          /* buffer containing separated planes */
     UINT   uBytesPerRawRow;  /* number of bytes per unencoded row */
     UINT   uBytesPerPlane;   /* number of bytes per plane per row */
@@ -408,7 +408,7 @@ static UINT encode_4 (
     plane_p = g->pPlanes;
     mask = 0x10101010;
 
-    while (TRUE)
+    while (TTRUE)
     {
         for (in_p=(ULONG*)inbuf_p; in_p<in_aft_p; ) {
             byt = 0;
@@ -829,7 +829,7 @@ static WORD pcxEncode_convert (
     /**** Output the Header if we haven't already ****/
 
     if (! g->fDidHeader) {
-        g->fDidHeader = TRUE;
+        g->fDidHeader = TTRUE;
         *pdwInputUsed    = 0;
         *pdwInputNextPos = 0;
         return outputHeader (g, dwOutputAvail, pbOutputBuf,

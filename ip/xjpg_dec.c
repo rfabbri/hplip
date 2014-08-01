@@ -220,7 +220,7 @@ typedef struct {
     long    quant_tbls[4][64];   /* quantization tables */
     BYTE    which_dc_tbl[4];     /* selects DC tbl for component */
     BYTE    which_ac_tbl[4];     /* selects AC tbl for component */
-    BOOL    fColorFax;           /* is this from a fax? */
+    TBOOL    fColorFax;           /* is this from a fax? */
 
     /***** Huffman tables *****/
 
@@ -229,8 +229,8 @@ typedef struct {
 
     /***** Configuration variables *****/
 
-    BOOL     output_subsampled;   /* output subsampled data? */
-    BOOL     fDenali;             /* data is from a Denali? */
+    TBOOL     output_subsampled;   /* output subsampled data? */
+    TBOOL     fDenali;             /* data is from a Denali? */
 
     /***** Variables used while decoding *****/
 
@@ -238,9 +238,9 @@ typedef struct {
     DWORD    dwOutNextPos;        /* next write pos in output file */
     long     rows_done;           /* # rows decoded and output */
     UINT     mcus_done;           /* # MCUs decoded so far in row */
-    BOOL     sending_rows;        /* returning the decoded rows? */
-    BOOL     got_short_header;    /* got an OfficeJet short header? */
-    BOOL     got_EOI;             /* hit the end-of-image marker? */
+    TBOOL     sending_rows;        /* returning the decoded rows? */
+    TBOOL     got_short_header;    /* got an OfficeJet short header? */
+    TBOOL     got_EOI;             /* hit the end-of-image marker? */
     BYTE     restart_cur_marker;  /* index of next expected marker */
     WORD     restart_cur_mcu;     /* current MCU-count in interval */
     int      prior_dc[4];         /* DC values of prior block */
@@ -279,7 +279,7 @@ typedef struct {
 
 static void huff_define_table (
     PJDEC_INST   g,
-    BOOL         ac,         /* defining an AC table? (else DC) */
+    TBOOL         ac,         /* defining an AC table? (else DC) */
     UINT         id,         /* which table is being defined (0-3) */
     const BYTE   counts[16], /* number of Huffman codes of each length 1-16 */
     const BYTE   values[]);  /* values associated with codes of above lengths */
@@ -578,13 +578,13 @@ static void calc_quant_table (
 static UINT mar_get (PJDEC_INST g)
 {
     UINT   marker = 0;   /* init to eliminate a compiler warning */
-    BOOL   got_ff;
+    TBOOL   got_ff;
 
-    got_ff = FALSE;
+    got_ff = TFALSE;
 
-    while (TRUE) {
+    while (TTRUE) {
         marker = read_byte (g);
-        if (marker == 0xff) got_ff = TRUE;
+        if (marker == 0xff) got_ff = TTRUE;
         else                break;
     }
 
@@ -681,7 +681,7 @@ static void parse_app_g3fax (PJDEC_INST g)
         && (dpi==200 || dpi==300 || dpi==400)) {
         /* everything is valid (whew!), so save dpi */
        g->traits.lHorizDPI = g->traits.lVertDPI = (long)dpi << 16;
-       g->fColorFax = TRUE;
+       g->fColorFax = TTRUE;
     }
 }
 
@@ -830,11 +830,11 @@ static void parse_app_short_header (PJDEC_INST g)
     g->which_dc_tbl[2] = 1;
     g->which_ac_tbl[2] = 1;
 
-    huff_define_table (g, FALSE, 0, lum_DC_counts  , lum_DC_values);
-    huff_define_table (g, TRUE , 0, g->fDenali     ? lum_AC_counts_Denali
+    huff_define_table (g, TFALSE, 0, lum_DC_counts  , lum_DC_values);
+    huff_define_table (g, TTRUE , 0, g->fDenali     ? lum_AC_counts_Denali
                                                    : lum_AC_counts, lum_AC_values);
-    huff_define_table (g, FALSE, 1, chrom_DC_counts, chrom_DC_values);
-    huff_define_table (g, TRUE , 1, chrom_AC_counts, chrom_AC_values);
+    huff_define_table (g, TFALSE, 1, chrom_DC_counts, chrom_DC_values);
+    huff_define_table (g, TTRUE , 1, chrom_AC_counts, chrom_AC_values);
 
     /***** parse the short header *****/
 
@@ -863,7 +863,7 @@ static void parse_app_short_header (PJDEC_INST g)
     calc_quant_table (g, dc_q_fac, ac_q_fac, orig_lum_quant, 0);
     calc_quant_table (g, dc_q_fac, ac_q_fac, orig_chrom_quant, 1);
 
-    g->got_short_header = TRUE;
+    g->got_short_header = TTRUE;
 }
 
 
@@ -1060,7 +1060,7 @@ static void mar_parse_dht (PJDEC_INST g)
 
         #if DUMP_JPEG
             _ftprintf (stderr, _T("\nDHT marker:  class=%d, id=%d\n   counts = "),
-                     (BOOL  )(class_id>>4), class_id & 0x0f);
+                     (TBOOL  )(class_id>>4), class_id & 0x0f);
             for (i=0; i<16; i++)
                 _ftprintf (stderr, _T("%2d "), num_codes[i]);
             _ftprintf (stderr, _T("\n   values = "));
@@ -1069,7 +1069,7 @@ static void mar_parse_dht (PJDEC_INST g)
             _ftprintf (stderr, _T("\n"));
         #endif
 
-        huff_define_table (g, (BOOL)(class_id>>4), class_id & 0x0f,
+        huff_define_table (g, (TBOOL)(class_id>>4), class_id & 0x0f,
                            num_codes, values);
     }
 
@@ -1299,7 +1299,7 @@ static void mar_parse (PJDEC_INST g, UINT marker)
     UINT tbl_index, code, size;                                         \
     main_huff_elem_t *elem;                                             \
                                                                         \
-    READ_BITS_LOAD (g, FALSE, main_ix_len, code, hit_marker)            \
+    READ_BITS_LOAD (g, TFALSE, main_ix_len, code, hit_marker)            \
     tbl_index = huff_tbl_p->index_p[code];                              \
     elem = &(huff_tbl_p->main_p[tbl_index]);                            \
     par_result = elem->value;                                           \
@@ -1332,7 +1332,7 @@ static UINT parse_aux_code (
     UINT excess;
     aux_huff_elem_t *lo_p, *hi_p, *mid_p;
 
-    READ_BITS_LOAD (g, FALSE, 16, code, syntax_err)
+    READ_BITS_LOAD (g, TFALSE, 16, code, syntax_err)
 
 #if 0   /* we are no longer using ROM tables */
     if ((BYTE *)aux_tbl_par_p == dec_AC_aux_tbl)
@@ -1475,7 +1475,7 @@ static void calc_table (
         if (memcmp(counts, rom_counts, 16) == 0  &&
             memcmp(huffval, rom_val, tot_codes) == 0) {
            PRINT (_T("calc_table: using ROM Huffman tables\n"), 0, 0);
-           return FALSE;   /* tell caller to use ROM-tables instead */
+           return TFALSE;   /* tell caller to use ROM-tables instead */
         }
         #endif
 
@@ -1487,7 +1487,7 @@ static void calc_table (
         k = 0;
         code = 0;
         siz = huffsize[0];
-        while (TRUE) {
+        while (TTRUE) {
             do {
                 huffcode[k++] = code++;
             } while (huffsize[k]==siz && k<257);   /* Overflow Detection */
@@ -1636,7 +1636,7 @@ static void calc_table (
 */
 static void huff_define_table (
     PJDEC_INST g,
-    BOOL       ac,         /* defining an AC table? (else DC) */
+    TBOOL       ac,         /* defining an AC table? (else DC) */
     UINT       id,         /* which table is being defined (0-3) */
     const BYTE counts[16], /* number of Huffman codes of each length 1-16 */
     const BYTE values[])   /* values associated with codes of above lengths */
@@ -1808,12 +1808,12 @@ static void zero_prior_DC (PJDEC_INST g)
  | parse_block | parses an 8x8 block; return data is ready for inverse DCT    |
  |_____________|______________________________________________________________|
  |                                                                            |
- | Return value:  TRUE  = we parsed a block,                                  |
- |                FALSE = hit a marker.                                       |
+ | Return value:  TTRUE  = we parsed a block,                                  |
+ |                TFALSE = hit a marker.                                       |
  | Output data is put in 'block' array.                                       |
  |____________________________________________________________________________|
 */
-static BOOL parse_block (
+static TBOOL parse_block (
     PJDEC_INST g,
     int        comp)    /* in: image component number */
 {
@@ -1884,7 +1884,7 @@ static BOOL parse_block (
         DUMP (_T("dc=0, size of dc=0\n"), 0,0,0);
         dc = 0;
     } else {
-        READ_BITS_LOAD (g, TRUE, siz, dc, syntax_err)
+        READ_BITS_LOAD (g, TTRUE, siz, dc, syntax_err)
         READ_BITS_ADVANCE (g, siz)
         DUMP (_T("dc=%x, size of dc=%d\n"), dc, siz, 0);
         FIX_TERM (siz, dc)
@@ -1906,7 +1906,7 @@ static BOOL parse_block (
      * marker.
      */
 
-    while (TRUE) {
+    while (TTRUE) {
         DECODE_HUFF (g, huff_p, AC_TBL_INDEX_LEN, rl_byte, hit_marker);
         run = rl_byte >> 4;
         siz = rl_byte & 0x0f;
@@ -1925,7 +1925,7 @@ static BOOL parse_block (
         } else {
             block_p   += run;
             dequant_p += run;
-            READ_BITS_LOAD (g, TRUE, siz, ac, hit_marker);
+            READ_BITS_LOAD (g, TTRUE, siz, ac, hit_marker);
             READ_BITS_ADVANCE (g, siz);
             DUMP (_T(", ac=%x\n"), ac, siz, 0);
             FIX_TERM (siz, ac);
@@ -1942,14 +1942,14 @@ static BOOL parse_block (
         }
     }
 
-    return TRUE;
+    return TTRUE;
 
     syntax_err:
         PRINT(_T("parse_block: syntax error\n"), 0,0);
         longjmp (g->syntax_error, BAD_HUFF_CODE);
 
     hit_marker:
-        return FALSE;
+        return TFALSE;
 
     #undef FIX_TERM
 }
@@ -1973,7 +1973,7 @@ static void handleMarkerInStream (PJDEC_INST g)
 
     if (marker == MARKER_EOI) {
         PRINT (_T("handleMarkerInStream: parsed EOI\n"), 0, 0);
-        g->got_EOI = TRUE;
+        g->got_EOI = TTRUE;
     } else if (marker == MARKER_DNL) {
         PRINT (_T("handleMarkerInStream: parsing DNL\n"), 0, 0);
         mar_parse_dnl (g);
@@ -2027,10 +2027,10 @@ static void LevelShiftAndRound (int *inBlock_p, BYTE *outBlock_p)
  | The pixels are loaded starting at mcus_done (not incremented).             |
  | This routine handles the restart interval logic, and markers.              |
  |                                                                            |
- | Returns TRUE if an MCU was parsed, else FALSE.                             |
+ | Returns TTRUE if an MCU was parsed, else TFALSE.                             |
  |____________________________________________________________________________|
 */
-static BOOL decode_MCU (PJDEC_INST g)
+static TBOOL decode_MCU (PJDEC_INST g)
 {
     BYTE   baPixels[256];
     BYTE  *pPixel;    
@@ -2060,7 +2060,7 @@ static BOOL decode_MCU (PJDEC_INST g)
                     #endif
                     handleMarkerInStream(g);
                     if (g->got_EOI)
-                        return FALSE;  /* we're out of data; cannot proceed */
+                        return TFALSE;  /* we're out of data; cannot proceed */
                 }
 
                 dct_inverse (g->block);
@@ -2091,7 +2091,7 @@ static BOOL decode_MCU (PJDEC_INST g)
         longjmp (g->syntax_error, NO_RESTART_MARKER);
     g->restart_cur_mcu += 1;
 
-    return TRUE;
+    return TTRUE;
 }
 
 
@@ -2441,9 +2441,9 @@ static WORD jpgDecode_getActualTraits (
 
     g->rows_done = 0;
     g->mcus_done = 0;
-    g->sending_rows = FALSE;
-    g->got_EOI = FALSE;
-    g->got_short_header = FALSE;
+    g->sending_rows = TFALSE;
+    g->got_EOI = TFALSE;
+    g->got_short_header = TFALSE;
     read_init (g);
     huff_init (g);
     zero_prior_DC (g);
@@ -2562,7 +2562,7 @@ static WORD jpgDecode_convert (
     static unsigned   ret_val;
     UINT       comp, row, row_len, n_rows, n_bytes, trash;
     int        iErrorCode;
-    static BOOL       bDecoded;
+    static TBOOL       bDecoded;
     const BYTE ycc_white[4] = { 255, 128, 128, 255 };
 
     HANDLE_TO_PTR (hXform, g);
@@ -2614,7 +2614,7 @@ static WORD jpgDecode_convert (
             }
 
             do {
-                bDecoded = FALSE;
+                bDecoded = TFALSE;
                 read_buf_open (g, pbInputBuf + *pdwInputUsed);
                     memcpy(&(g->old_syntax_error),  &(g->syntax_error), sizeof(jmp_buf));
                     iErrorCode = setjmp(g->syntax_error);
@@ -2626,7 +2626,7 @@ static WORD jpgDecode_convert (
                          * won't output the pad rows on the bottom of the image
                          */
                         if (! g->got_EOI) {
-                            READ_BITS_LOAD (g, FALSE, 8, trash, at_a_marker);
+                            READ_BITS_LOAD (g, TFALSE, 8, trash, at_a_marker);
                             goto no_marker;
                             at_a_marker:
                                 handleMarkerInStream(g);
@@ -2665,7 +2665,7 @@ static WORD jpgDecode_convert (
 
                     if (g->mcus_done >= g->mcus_per_row) {
                         PRINT (_T("done with row of MCUs; starting row-sends\n"), 0, 0);
-                        g->sending_rows = TRUE;
+                        g->sending_rows = TTRUE;
                         g->mcus_done = 0;
                     }
                 }
@@ -2681,7 +2681,7 @@ static WORD jpgDecode_convert (
     if (g->sending_rows) {
         if (g->rows_done>=g->traits.lNumRows && g->traits.lNumRows>=0) {
             /* we've already output all rows, so discard these */
-            g->sending_rows = FALSE;
+            g->sending_rows = TFALSE;
         } else {
             copy_out_rows (
                 g,
@@ -2696,7 +2696,7 @@ static WORD jpgDecode_convert (
 
             if ((g->rows_done>=g->traits.lNumRows && g->traits.lNumRows>=0)
                 || (g->rows_done % g->rows_per_mcu)==0) {
-                g->sending_rows = FALSE;
+                g->sending_rows = TFALSE;
             }
             /* n_rows is 1, unless the never-used output_subsampled feature is used */
             if (n_rows > 0)

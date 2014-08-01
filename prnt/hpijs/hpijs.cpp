@@ -42,7 +42,7 @@
 #include "ijs_server.h"
 #include "hpijs.h"
 #include "services.h"
-#include "utils.h"
+#include <common/utils.h>
 
 extern void SendDbusMessage (const char *dev, const char *printer, int code, 
                              const char *username, const int jobid, const char *title);

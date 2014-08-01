@@ -53,7 +53,7 @@
 #endif
 #include "hpip.h"
 #include "hpijsfax.h"
-#include "utils.h"
+#include <common/utils.h>
 
 
 int hpijsfax_status_cb (void *status_cb_data, IjsServerCtx *ctx, IjsJobId job_id)

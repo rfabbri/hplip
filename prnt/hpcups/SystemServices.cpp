@@ -30,7 +30,7 @@
 
 #include "CommonDefinitions.h"
 #include "SystemServices.h"
-#include "utils.h"
+#include <common/utils.h>
 
 SystemServices::SystemServices(int iLogLevel, int job_id, char* user_name) : m_iLogLevel(iLogLevel)
 {

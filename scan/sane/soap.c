@@ -56,7 +56,7 @@
 #include "soap.h"
 #include "soapi.h"
 #include "io.h"
-#include "utils.h"
+#include <common/utils.h>
 
 #define DEBUG_DECLARE_ONLY
 #include "sanei_debug.h"

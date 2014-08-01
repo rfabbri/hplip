@@ -1,0 +1,1 @@
+libapdk_la-capture.lo .libs/libapdk_la-capture.o: prnt/hpijs/capture.cpp

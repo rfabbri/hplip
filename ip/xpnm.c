@@ -93,8 +93,8 @@ typedef struct {
     DWORD    dwInNextPos;     /* file pos for subsequent input */
     DWORD    dwOutNextPos;    /* file pos for subsequent output */
     DWORD    dwValidChk;      /* struct validity check value */
-    BOOL     fIsEncode;       /* false=decode, true=encode */
-    BOOL     fDidHeader;      /* already sent/processed the header? */
+    TBOOL     fIsEncode;       /* false=decode, true=encode */
+    TBOOL     fDidHeader;      /* already sent/processed the header? */
 } PNM_INST, *PPNM_INST;
 
 #define MAX_DECODE_HEADER_SIZE 4096
@@ -141,7 +141,7 @@ FUNC_STATUS WORD pnmEncode_openXform (
         HANDLE_TO_PTR (*pXform, g);
 
         g->dwOutNextPos=MAX_ENCODE_HEADER_SIZE;
-        g->fIsEncode=TRUE;
+        g->fIsEncode=TTRUE;
     }
     return wResult;
 

@@ -148,7 +148,7 @@ typedef struct {
     BYTE     bWhich;          /* which table to generate */
     BYTE     bTables[3][256]; /* the 8-bit look-up tables */
     WORD    *pwTables[3];     /* ptrs to 12-bit-index tables (for 16-bits/pixel) */
-    BOOL     bBigTable;       /* are we using the 12-bit tables? */
+    TBOOL     bBigTable;       /* are we using the 12-bit tables? */
     int      nTables;         /* # of tables defined (1 or 3) */
     DWORD    dwBytesPerRow;   /* # of bytes in each row */
     DWORD    dwRowsDone;      /* number of rows converted so far */
@@ -170,7 +170,7 @@ typedef enum {
 
 
 
-static BOOL generateTable (
+static TBOOL generateTable (
     PTBL_INST g,
     DWORD_OR_PVOID aXformInfo[])
 {
@@ -183,7 +183,7 @@ static BOOL generateTable (
     int           nTable;
 
     g->nTables = 1;
-    g->bBigTable = FALSE;
+    g->bBigTable = TFALSE;
     pTable = g->bTables[0];
     dwparam =                aXformInfo[IP_TABLE_OPTION].dword;
     pvparam =                aXformInfo[IP_TABLE_OPTION].pvoid;
@@ -195,25 +195,25 @@ static BOOL generateTable (
     {
         case IP_TABLE_USER:
             if (pvparam == 0)
-                return FALSE;
+                return TFALSE;
             memcpy (pTable, (PBYTE)pvparam, 256);
         break;
 
         case IP_TABLE_USER_WORD:
             if (pvparam == 0)
-                return FALSE;
+                return TFALSE;
             IP_MEM_ALLOC (4097*sizeof(WORD), pwTable);  /* 4097: extra entry at end */
             g->pwTables[0] = pwTable;
             memcpy (pwTable, (PWORD)pvparam, 4096*sizeof(WORD));
             pwTable[4096] = pwTable[4095];  /* extra entry to help interpolation */
-            g->bBigTable = TRUE;
+            g->bBigTable = TTRUE;
         break;
 
         case IP_TABLE_USER_THREE:
             if (aXformInfo[IP_TABLE_COLOR_1].pvoid==0 ||
                 aXformInfo[IP_TABLE_COLOR_2].pvoid==0 ||
                 aXformInfo[IP_TABLE_COLOR_3].pvoid==0)
-                return FALSE;
+                return TFALSE;
             memcpy (g->bTables[0], (PBYTE)aXformInfo[IP_TABLE_COLOR_1].pvoid, 256);
             memcpy (g->bTables[1], (PBYTE)aXformInfo[IP_TABLE_COLOR_2].pvoid, 256);
             memcpy (g->bTables[2], (PBYTE)aXformInfo[IP_TABLE_COLOR_3].pvoid, 256);
@@ -224,7 +224,7 @@ static BOOL generateTable (
             if (aXformInfo[IP_TABLE_COLOR_1].pvoid==0 ||
                 aXformInfo[IP_TABLE_COLOR_2].pvoid==0 ||
                 aXformInfo[IP_TABLE_COLOR_3].pvoid==0)
-                return FALSE;
+                return TFALSE;
 
             for (nTable=0; nTable<3; nTable++) {
                 IP_MEM_ALLOC (4097*sizeof(WORD), pwTable);  /* 4097: extra entry at end */
@@ -233,7 +233,7 @@ static BOOL generateTable (
                 pwTable[4096] = pwTable[4095];  /* extra entry to help interpolation */
             }
             g->nTables = 3;
-            g->bBigTable = TRUE;
+            g->bBigTable = TTRUE;
         break;
 
         case IP_TABLE_PASS_THRU:
@@ -254,7 +254,7 @@ static BOOL generateTable (
 
             gamma = (float)flparam / (float)(1L<<16);
             if (gamma<=0.0f || gamma>=10.0f)
-                return FALSE;
+                return TFALSE;
             gamma = 1.0f / gamma;
 
             if (g->traits.iBitsPerPixel==16 || g->traits.iBitsPerPixel==48) {
@@ -269,7 +269,7 @@ static BOOL generateTable (
                 }
 
                 pwTable[4096] = pwTable[4095];  /* extra entry to help interpolation */
-                g->bBigTable = TRUE;
+                g->bBigTable = TTRUE;
             } else {
                 for (index=0; index<=255u; index++) {
                     fval = (float)index / 255.0f;
@@ -282,7 +282,7 @@ static BOOL generateTable (
 
         case IP_TABLE_THRESHOLD:
             if (dwparam<1 || dwparam>255)
-                return FALSE;
+                return TFALSE;
             memset (pTable, 0, dwparam);
             memset (pTable+dwparam, 255, 256-dwparam);
         break;
@@ -309,7 +309,7 @@ static BOOL generateTable (
             nWhite = dwparam & 0xFFFFu;
 
             if (nBlack+nWhite > 256)
-                return FALSE;
+                return TFALSE;
 
             for (index=0; index<nBlack; index++)
                 pTable[index] = 0;
@@ -329,13 +329,13 @@ static BOOL generateTable (
         break;
 
         default:
-            return FALSE;
+            return TFALSE;
     }
 
-    return TRUE;
+    return TTRUE;
 
 fatal_error:
-    return FALSE;
+    return TFALSE;
 }
 
 

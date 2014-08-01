@@ -54,7 +54,7 @@
 #include "hpip.h"
 #include "hpcupsfax.h"
 #include "bug.h"
-#include "utils.h"
+#include <common/utils.h>
 using namespace std;
 
 int    fax_encoding = RASTER_MMR;

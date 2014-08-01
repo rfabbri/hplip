@@ -40,7 +40,7 @@ AC_PROG_LIBTOOL
 # Checks for required libraries, don't set global -lpthread, -lm, -ljpeg, ... here, set in Makefile.
 AC_CHECK_LIB([pthread], [pthread_create], [LIBS="$LIBS"], [AC_MSG_ERROR([cannot find libpthread support], 7)])
 AC_CHECK_LIB([m], [pow], [LIBS="$LIBS"], [AC_MSG_ERROR([cannot find libm math support], 10)])
-AC_CHECK_LIB([jpeg], [jpeg_set_defaults],[LIBS="$LIBS"], [AC_MSG_ERROR(["cannot find libjpeg support"], 102)])
+AC_CHECK_LIB([jpeg], [jpeg_set_defaults], , [AC_MSG_ERROR(["cannot find libjpeg support"], 102)])
 AC_CHECK_LIB([dl], [dlopen], [LIBS="$LIBS" AC_DEFINE([HAVE_LIBDL])], [AC_MSG_ERROR(["cannot find libdl support"], 104)])
 
 # Checks for required header files.
@@ -515,7 +515,7 @@ if test "$hpijs_only_build" = "no" && test "$hpcups_only_build" = "no"; then
       AC_CHECK_LIB([usb], [usb_init], [LIBS="$LIBS"], [AC_MSG_ERROR([cannot find libusb support], 2)])
       AC_CHECK_HEADERS(usb.h, ,[AC_MSG_ERROR([cannot find libusb-devel support], 11)])
    else
-      AC_CHECK_LIB([usb-1.0], [libusb_init], [LIBS="$LIBS"], [AC_MSG_ERROR([cannot find libusb 1.0 support], 2)])
+      AC_CHECK_LIB([usb-1.0], [libusb_init], , [AC_MSG_ERROR([cannot find libusb 1.0 support], 2)])
       AC_CHECK_HEADERS(libusb-1.0/libusb.h, ,[AC_MSG_ERROR([cannot find libusb-1.0-devel support], 11)])
    fi
 fi

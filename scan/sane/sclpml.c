@@ -41,7 +41,7 @@
 #include "common.h"
 #include "scl.h"
 #include "hpaio.h"
-#include "utils.h"
+#include <common/utils.h>
 
 #define DEBUG_DECLARE_ONLY
 #include "sanei_debug.h"
@@ -2538,7 +2538,7 @@ SANE_Status sclpml_start(SANE_Handle handle)
     
     DBG(8, "sane_hpaio_start(): %s %d deviceuri=%s\n", __FILE__, __LINE__, hpaio->deviceuri);
 
-    hpaio->user_cancel = FALSE;
+    hpaio->user_cancel = TFALSE;
 
     hpaio->endOfData = 0;
 
@@ -3025,7 +3025,7 @@ void sclpml_cancel(SANE_Handle handle)
     if (hpaio->user_cancel)  {
         bug("sane_hpaio_cancel: already cancelled!\n");
     }
-    hpaio->user_cancel = TRUE;
+    hpaio->user_cancel = TTRUE;
 
     if (hpaio->scannerType==SCANNER_TYPE_PML)
     {

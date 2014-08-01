@@ -29,7 +29,7 @@
 \*****************************************************************************/
 
 #include "CommonDefinitions.h"
-#include "utils.h"
+#include <common/utils.h>
 
 int SendChunkHeader (BYTE *szStr, DWORD dwSize, DWORD dwChunkType, DWORD dwNumItems)
 {

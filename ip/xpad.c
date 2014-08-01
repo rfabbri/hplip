@@ -374,10 +374,10 @@ static WORD pad_convert (
     PDWORD          pdwOutputThisPos) /* out: file-pos to write the data */
 {
     PPAD_INST g;
-    BOOL      bWhiteRow;
+    TBOOL      bWhiteRow;
 
     HANDLE_TO_PTR (hXform, g);
-    bWhiteRow = FALSE;
+    bWhiteRow = TFALSE;
 
     /**** Decide what to do ****/
 
@@ -386,11 +386,11 @@ static WORD pad_convert (
 
         if (g->dwInRows < g->dwMinInRows) {
             /* We need to output another pad row on the bottom */
-            bWhiteRow = TRUE;
+            bWhiteRow = TTRUE;
             g->dwInRows += 1;
         } else if (g->dwBottom > 0) {
             /* We need to output another pad row on the bottom */
-            bWhiteRow = TRUE;
+            bWhiteRow = TTRUE;
             g->dwBottom -= 1;
         } else {
             /* We are done */
@@ -401,7 +401,7 @@ static WORD pad_convert (
         }
     } else if (g->dwOutRows < g->dwTop) {
         /* We need to output another pad row on the top */
-        bWhiteRow = TRUE;
+        bWhiteRow = TTRUE;
     }
 
     /**** Output a Row ****/

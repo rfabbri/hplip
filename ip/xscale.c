@@ -137,7 +137,7 @@ typedef enum {
 
 typedef struct {
     IM_TYPE image_type;      /* type of image (bilevel, gray, color)          */
-    BOOL    fast;            /* scale (quickly) using pixel replication?      */
+    TBOOL    fast;            /* scale (quickly) using pixel replication?      */
     BYTE    nMoreFlush;      /* # more flush calls reqd to send buffered rows */
     ULONG   horiz_fac;       /* horiz scale-factor (16.16 fixed-pt)           */
     ULONG   vert_fac;        /* vert  scale-factor (16.16 fixed-pt)           */
@@ -1007,7 +1007,7 @@ static WORD scale_getActualTraits (
     switch (g->image_type) {
         case IM_BILEVEL:
             if (g->vert_fac < 0x10000u)
-                g->fast = FALSE;  /* bi-level down-scale doesn't have fast case */
+                g->fast = TFALSE;  /* bi-level down-scale doesn't have fast case */
             if (g->fast) bi_fast_open  (g, in_row_len);
             else         bi_scale_open (g, in_row_len);
             break;
@@ -1015,7 +1015,7 @@ static WORD scale_getActualTraits (
         case IM_GRAY:
         case IM_COLOR:
             if (g->vert_fac > 0x10000u)
-                g->fast = FALSE;  /* contone up-scale doesn't have fast case */
+                g->fast = TFALSE;  /* contone up-scale doesn't have fast case */
             contone_scale_open (g, in_row_len);
             break;
     }

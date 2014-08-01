@@ -122,7 +122,7 @@
 typedef struct {
     IP_IMAGE_TRAITS traits;   /* traits of the image */
     int      iBitsPerSample;  /* bits per channel (1, 8 or 16) */
-    BOOL     bByteSwap;       /* bytes are in wrong endian order, so must swap? */
+    TBOOL     bByteSwap;       /* bytes are in wrong endian order, so must swap? */
     char     sFilePath[200];  /* path to the file (empty string means none) */
     FILE    *fileOut;         /* handle of opened file */
     DWORD    dwRawRowBytes;   /* bytes per raw row */
@@ -130,7 +130,7 @@ typedef struct {
     DWORD    dwValidChk;      /* struct validity check value */
     DWORD    dwInNextPos;     /* file pos for subsequent input */
     DWORD    dwOutNextPos;    /* file pos for subsequent output */
-    BOOL     fDidHeader;      /* already sent the header? */
+    TBOOL     fDidHeader;      /* already sent the header? */
 } TIF_INST, *PTIF_INST;
 
 
@@ -658,7 +658,7 @@ static WORD tifEncode_convert (
     /**** Output the Header if we haven't already ****/
 
     if (! g->fDidHeader) {
-        g->fDidHeader = TRUE;
+        g->fDidHeader = TTRUE;
         *pdwInputUsed    = 0;
         *pdwInputNextPos = 0;
         return outputHeader (g, dwOutputAvail, pbOutputBuf,
@@ -960,7 +960,7 @@ static void ByteSwap (
  *
 \*****************************************************************************/
 
-static BOOL ParseTag (
+static TBOOL ParseTag (
     PTIF_INST  g,              /* in:  our instance variables */
     TIFFTAG   *pTag,           /* in:  the tag to parse */
     BYTE      *pbInputBuf,     /* in:  input buffer containing TIFF header */
@@ -1073,10 +1073,10 @@ static BOOL ParseTag (
             break;
     }
 
-    return TRUE;
+    return TTRUE;
 
     fatal_error:
-    return FALSE;
+    return TFALSE;
 }
 
 

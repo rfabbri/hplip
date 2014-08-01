@@ -365,7 +365,7 @@ static WORD thumb_convert (
     ULONG    ulSum, sum0, sum1, sum2;
     ULONG    *pulSum, *pulSumAfter;
     UINT     u;
-    BOOL     fSentRow;
+    TBOOL     fSentRow;
 
     HANDLE_TO_PTR (hXform, g);
     pulSumAfter = g->pulSums + g->dwOutRowBytes;
@@ -443,11 +443,11 @@ static WORD thumb_convert (
     g->wMoreRows2Sum -= 1;
 
     if (g->wMoreRows2Sum > 0) {
-        fSentRow = FALSE;
+        fSentRow = TFALSE;
         *pdwOutputUsed = 0;
     } else {
         g->wMoreRows2Sum = g->wScale;
-        fSentRow = TRUE;
+        fSentRow = TTRUE;
         g->ulRowsOutput += 1;
         INSURE (dwOutputAvail >= g->dwOutRowBytes);
         *pdwOutputUsed   = g->dwOutRowBytes;

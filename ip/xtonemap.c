@@ -100,7 +100,7 @@
 
 typedef struct {
     IP_IMAGE_TRAITS traits;   /* traits of the input and output image */
-    BOOL     bLumSpace;       /* luminance-based color space? (else RGB) */
+    TBOOL     bLumSpace;       /* luminance-based color space? (else RGB) */
     BYTE     tonemap[256];    /* the tonemap */
     DWORD    dwBytesPerRow;   /* # of bytes in each row */
     DWORD    dwRowsDone;      /* number of rows converted so far */

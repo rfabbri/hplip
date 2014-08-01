@@ -33,7 +33,7 @@
 #include "ModeJpeg.h"
 #include <dlfcn.h>
 #include "Utils.h"
-#include "utils.h"
+#include <common/utils.h>
 
 #define MAX_JPEG_FILE_SIZE 2097152    // 2 Mgabytes
 

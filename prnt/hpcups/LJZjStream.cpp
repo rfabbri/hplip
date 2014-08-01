@@ -42,7 +42,7 @@
 #include "LJZjStream.h"
 #include "Utils.h"
 #include "hpjbig_wrapper.h"
-#include "utils.h"
+#include <common/utils.h>
 
 #define ZJC_BAND_HEIGHT    100
 

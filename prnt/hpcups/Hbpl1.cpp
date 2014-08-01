@@ -35,7 +35,7 @@
 
 #include <dlfcn.h>
 #include "Hbpl1.h"
-#include "utils.h"
+#include <common/utils.h>
 #define ZJC_BAND_HEIGHT    100
 #define ON 1
 #define OFF 0

@@ -35,7 +35,8 @@
 #include <sys/wait.h>
 #include <sys/utsname.h>
 #include <time.h>
-#include "utils.h"
+#include <common/utils.h>
+
 
 #define HP_FILE_VERSION_STR    "03.09.08.0"
 

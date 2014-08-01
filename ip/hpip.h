@@ -68,7 +68,7 @@ typedef unsigned short USHORT, *PUSHORT, FAR *LPUSHORT;
 typedef unsigned int DWORD, *PDWORD, FAR *LPDWORD;
 typedef unsigned int UINT, *PUINT, FAR *LPUINT;
 typedef unsigned long ULONG, *PULONG, FAR *LPULONG;
-typedef enum { FALSE=0, TRUE=1 } BOOL;
+typedef enum { TFALSE=0, TTRUE=1 } TBOOL;
 typedef void VOID, *PVOID, FAR *LPVOID;
 typedef long long int __int64;
 
@@ -736,7 +736,7 @@ typedef struct {
     PSTR    pszTypeFace;   // ptr to name of typeface (required)
     float   fHeightPoints; // point-size of font
     float   fMarginPoints; // left and right margin, in points
-    BOOL    bOverlay;      // 0=append header, 1=overlay it on top of page
+    TBOOL    bOverlay;      // 0=append header, 1=overlay it on top of page
     RGBQUAD rgbWhite;      // a white pixel
     RGBQUAD rgbBlack;      // a black pixel
 } __attribute__((packed)) XHEADER_SPEC, *PXHEADER_SPEC, FAR*LPXHEADER_SPEC;

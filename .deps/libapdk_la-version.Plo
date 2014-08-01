@@ -1,0 +1,4 @@
+libapdk_la-version.lo .libs/libapdk_la-version.o: prnt/hpijs/version.cpp \
+  prnt/hpijs/config.h
+
+prnt/hpijs/config.h:
