@@ -1032,11 +1032,7 @@ static WORD faxEncode_setXformSpec (
 
     HANDLE_TO_PTR (hXform, g);
     g->wOutFmt  = (BYTE)aXformInfo[IP_FAX_FORMAT].dword;
-<<<<<<< HEAD
-    g->fNoEOLs  = (BOOL)aXformInfo[IP_FAX_NO_EOLS].dword;
-=======
     g->fNoEOLs  = (TBOOL)aXformInfo[IP_FAX_NO_EOLS].dword;
->>>>>>> rf/master
     g->wMinBits = (WORD)aXformInfo[IP_FAX_MIN_ROW_LEN].dword;
     return IP_DONE;
 
@@ -1222,34 +1218,20 @@ static WORD faxEncode_convert (
 
     switch (g->wOutFmt) {
         case IP_FAX_MH:
-<<<<<<< HEAD
-            encode_row_1d (g, pbInputBuf, g->iRowLen, FALSE);
-=======
             encode_row_1d (g, pbInputBuf, g->iRowLen, TFALSE);
->>>>>>> rf/master
             put_fill_bits (g);
         break;
 
         case IP_FAX_MR:
             if (g->iRowNum % g->w12Cycle == 0)
-<<<<<<< HEAD
-                encode_row_1d (g, pbInputBuf, g->iRowLen, TRUE);
-            else
-                encode_row_2d (g, pbInputBuf, g->prior_p, g->iRowLen, TRUE);
-=======
                 encode_row_1d (g, pbInputBuf, g->iRowLen, TTRUE);
             else
                 encode_row_2d (g, pbInputBuf, g->prior_p, g->iRowLen, TTRUE);
->>>>>>> rf/master
             put_fill_bits (g);
         break;
 
         case IP_FAX_MMR:
-<<<<<<< HEAD
-            encode_row_2d (g, pbInputBuf, g->prior_p, g->iRowLen, FALSE);
-=======
             encode_row_2d (g, pbInputBuf, g->prior_p, g->iRowLen, TFALSE);
->>>>>>> rf/master
         break;
     }
 
@@ -1446,30 +1428,17 @@ typedef struct {
     STATE_2D state_2d;        /* state of the 2-dim decoder                   */
     int      a0;              /* pixel before 1st is an imaginary white pixel */
     BYTE    *prior_p;         /* buffer containing prior row                  */
-<<<<<<< HEAD
-    BOOL     ref_row_invalid; /* (MR only) reference row invalid due to error?*/
-=======
     TBOOL     ref_row_invalid; /* (MR only) reference row invalid due to error?*/
->>>>>>> rf/master
 
     /* Variables for the exported functions: */
     BYTE     input_format;    /* input format (IP_FAX_MH/MR/MMR)              */
     BYTE     num_eols;        /* number of successive EOLs we've gotten       */
-<<<<<<< HEAD
-    BOOL     no_eols;         /* are EOLs not present in input?               */
-    BOOL     toss_everything; /* are we discarding all data due to prior err? */
-    BOOL     flushing_to_eol; /* are we ignoring bits until an EOL?           */
-    BOOL     got_fill;        /* gotten any fill-zeroes?                      */
-    BOOL     got_black;       /* set any black pixels in the row?             */
-    BOOL     two_dim;         /* next row is 2-dimensional encoding?          */
-=======
     TBOOL     no_eols;         /* are EOLs not present in input?               */
     TBOOL     toss_everything; /* are we discarding all data due to prior err? */
     TBOOL     flushing_to_eol; /* are we ignoring bits until an EOL?           */
     TBOOL     got_fill;        /* gotten any fill-zeroes?                      */
     TBOOL     got_black;       /* set any black pixels in the row?             */
     TBOOL     two_dim;         /* next row is 2-dimensional encoding?          */
->>>>>>> rf/master
     int      row_len;         /* # pixels in each row                         */
     int      bytes_in_row;    /* # bytes in each row                          */
 } DEC_INST, *PDEC_INST;
@@ -1591,21 +1560,6 @@ static void bits_flush (DEC_INST *g)
  | bits_flush_to_eol | flushes input bits until EOL is encountered            |
  |___________________|________________________________________________________|
  |                                                                            |
-<<<<<<< HEAD
- | If got_fill is TRUE, then we merely scan for a set bit.                    |
- | Otherwise, we first count leading zeroes until it reaches 11.              |
- |                                                                            |
- | Return value:  TRUE  = We hit an EOL.  In this case, if leave_a_bit is     |
- |                        TRUE, the cache will contain at least one bit so    |
- |                        you can fetch a 1-dim/2-dim bit.                    |
- |                FALSE = We need more input data.                            |
- |____________________________________________________________________________|
-*/
-static BOOL bits_flush_to_eol (
-    DEC_INST *g,         /* our instance vars */
-    BOOL    got_fill,    /* have we gotten fill zeroes? */
-    BOOL    leave_a_bit) /* after hitting EOL, insure that cache isn't empty? */
-=======
  | If got_fill is TTRUE, then we merely scan for a set bit.                    |
  | Otherwise, we first count leading zeroes until it reaches 11.              |
  |                                                                            |
@@ -1619,7 +1573,6 @@ static TBOOL bits_flush_to_eol (
     DEC_INST *g,         /* our instance vars */
     TBOOL    got_fill,    /* have we gotten fill zeroes? */
     TBOOL    leave_a_bit) /* after hitting EOL, insure that cache isn't empty? */
->>>>>>> rf/master
 {
     #define CLEAR_UNUSED_CACHE_BITS                             \
         if (g->gb_cache_cnt < 32)                               \
@@ -1633,11 +1586,7 @@ static TBOOL bits_flush_to_eol (
     /*********************************************/
 
     if (g->gb_num_zeroes >= 11)
-<<<<<<< HEAD
-        got_fill = TRUE;
-=======
         got_fill = TTRUE;
->>>>>>> rf/master
 
     if (! got_fill)
     {
@@ -1658,15 +1607,9 @@ static TBOOL bits_flush_to_eol (
 
         /* the cache is now empty; start scanning bytes */
 
-<<<<<<< HEAD
-        while (TRUE) {
-            if (g->gb_byte_p >= g->gb_buf_after_p)
-                return FALSE;
-=======
         while (TTRUE) {
             if (g->gb_byte_p >= g->gb_buf_after_p)
                 return TFALSE;
->>>>>>> rf/master
             byt = *(g->gb_byte_p)++;
             g->gb_num_zeroes += baLeftZeroesTbl[byt];
             if (g->gb_num_zeroes >= 11) {
@@ -1682,19 +1625,11 @@ static TBOOL bits_flush_to_eol (
      /* Scan input until a non-zero bit is seen */
     /*******************************************/
 
-<<<<<<< HEAD
-    while (TRUE)
-    {
-        BITS_REFILL_CACHE (g)
-        if (g->gb_cache_cnt==0 || (leave_a_bit && g->gb_cache_cnt==1))
-            return FALSE;
-=======
     while (TTRUE)
     {
         BITS_REFILL_CACHE (g)
         if (g->gb_cache_cnt==0 || (leave_a_bit && g->gb_cache_cnt==1))
             return TFALSE;
->>>>>>> rf/master
 
         CLEAR_UNUSED_CACHE_BITS
 
@@ -1707,22 +1642,14 @@ static TBOOL bits_flush_to_eol (
                  bit >>= 1)
                 g->gb_cache_cnt -= 1;   /* discard the 0's before the 1 */
 
-<<<<<<< HEAD
-            /* After discarding the set bit, if leave_a_bit is TRUE, we want
-=======
             /* After discarding the set bit, if leave_a_bit is TTRUE, we want
->>>>>>> rf/master
              * the cache to be non-empty so that a 1-dim/2-dim bit can then
              * be fetched.  Hence the check for 2 bits in cache below.
              */
             if (!leave_a_bit || g->gb_cache_cnt>=2) {
                 g->gb_cache_cnt -= 1;  /* discard the set bit we found above */
                 g->gb_num_zeroes = 0;
-<<<<<<< HEAD
-                return TRUE;
-=======
                 return TTRUE;
->>>>>>> rf/master
             }
         }
 
@@ -2084,11 +2011,7 @@ static void decode_row_init (DEC_INST *g)
     g->white = 0xFFu;  /* start with a white run */
     g->state_2d = NORMAL_2D;
     g->a0 = -1;  /* pixel before 1st is an imaginary white pixel */
-<<<<<<< HEAD
-    g->got_black = FALSE;   /* haven't gotten any black pixels */
-=======
     g->got_black = TFALSE;   /* haven't gotten any black pixels */
->>>>>>> rf/master
 }
 
 
@@ -2114,21 +2037,13 @@ static UINT decode_row_1d (
 
     if (g->pixel_pos == 0) {
         memset (pbOutBuf, 0, g->bytes_in_row);   /* set whole row to white */
-<<<<<<< HEAD
-        g->ref_row_invalid = TRUE;
-=======
         g->ref_row_invalid = TTRUE;
->>>>>>> rf/master
     }
 
     white = (UINT)(int )(signed char)g->white;  /* must be all 0's or all 1's */
     pixel_pos = g->pixel_pos;
 
-<<<<<<< HEAD
-    while (TRUE) {
-=======
     while (TTRUE) {
->>>>>>> rf/master
 
         if (white) {
             index_length = MAX_WHITE_CODELEN;
@@ -2147,11 +2062,7 @@ static UINT decode_row_1d (
             /* todo: below, we call set_run for EVERY make-up code (slow) */
             if (! white) {
                 set_run (pbOutBuf, pixel_pos, run_len, g->row_len);
-<<<<<<< HEAD
-                g->got_black = TRUE;
-=======
                 g->got_black = TTRUE;
->>>>>>> rf/master
             }
 
             pixel_pos += run_len;
@@ -2180,11 +2091,7 @@ static UINT decode_row_1d (
                     goto bail_out;
                 if (pixel_pos == g->row_len) {
                     ret_val |= IP_PRODUCED_ROW;
-<<<<<<< HEAD
-                    g->ref_row_invalid = FALSE;
-=======
                     g->ref_row_invalid = TFALSE;
->>>>>>> rf/master
                     goto bail_out;
                 }
                 memcpy (pbOutBuf, pbPrevOutBuf, g->bytes_in_row);
@@ -2193,11 +2100,7 @@ static UINT decode_row_1d (
                 break;
 
             default:
-<<<<<<< HEAD
-                assert (FALSE);
-=======
                 assert (TFALSE);
->>>>>>> rf/master
         } /* end of switch */
     } /* end of while */
 
@@ -2242,21 +2145,13 @@ static UINT decode_row_2d (
         pbPrevBuf[g->bytes_in_row] = 0x55u;   /* scan_to requires this */
     }
 
-<<<<<<< HEAD
-    while (TRUE) {
-=======
     while (TTRUE) {
->>>>>>> rf/master
 
           /****************************************/
          /* Process a usual code -- normal state */
         /****************************************/
 
-<<<<<<< HEAD
-        need_b0 = TRUE;
-=======
         need_b0 = TTRUE;
->>>>>>> rf/master
 
         while (g->state_2d == NORMAL_2D) {
 
@@ -2292,11 +2187,7 @@ static UINT decode_row_2d (
                 need_b0 = (iAction<-1 || iAction>0);
                 if (! white) {
                     set_run (pbOutBuf, a0, a1-a0, row_len);
-<<<<<<< HEAD
-                    g->got_black = TRUE;
-=======
                     g->got_black = TTRUE;
->>>>>>> rf/master
                 }
                 if (a1<a0 || a1>row_len) goto corrupt;
                 a0 = a1;
@@ -2305,15 +2196,9 @@ static UINT decode_row_2d (
                 b2 = scan_to (white, pbPrevBuf, b1+1, row_len);
                 if (! white) {
                     set_run (pbOutBuf, a0, b2-a0, row_len);
-<<<<<<< HEAD
-                    g->got_black = TRUE;
-                }
-                need_b0 = FALSE;
-=======
                     g->got_black = TTRUE;
                 }
                 need_b0 = TFALSE;
->>>>>>> rf/master
                 a0 = b2;
                 b1 = b2;
             }
@@ -2323,11 +2208,7 @@ static UINT decode_row_2d (
          /* Process a usual code -- horizontal mode */
         /*******************************************/
 
-<<<<<<< HEAD
-        while (TRUE) {   /* HORIZ_1ST or HORIZ_2ND */
-=======
         while (TTRUE) {   /* HORIZ_1ST or HORIZ_2ND */
->>>>>>> rf/master
             int           index_length;
             const BYTE   *index_tbl_p;
             const USHORT *value_tbl_p;
@@ -2353,11 +2234,7 @@ static UINT decode_row_2d (
                 /* todo: below, we call set_run for EVERY make-up code (slow) */
                 if (! white) {
                     set_run (pbOutBuf, a0, run_len, row_len);
-<<<<<<< HEAD
-                    g->got_black = TRUE;
-=======
                     g->got_black = TTRUE;
->>>>>>> rf/master
                 }
                 a0 += run_len;
             } while (run_len > 63);
@@ -2398,11 +2275,7 @@ static UINT decode_row_2d (
                 g->state_2d = NORMAL_2D;
                 memcpy (pbOutBuf, pbPrevBuf, g->bytes_in_row);
                 ret_val = IP_PRODUCED_ROW | IP_INPUT_ERROR;
-<<<<<<< HEAD
-                g->ref_row_invalid = TRUE;
-=======
                 g->ref_row_invalid = TTRUE;
->>>>>>> rf/master
                 goto bail_out;
                 break;
 
@@ -2422,22 +2295,14 @@ static UINT decode_row_2d (
                     else if (a0 >= 0) {
                         memcpy (pbOutBuf, pbPrevBuf, g->bytes_in_row);
                         ret_val |= IP_PRODUCED_ROW | IP_INPUT_ERROR;
-<<<<<<< HEAD
-                        g->ref_row_invalid = TRUE;
-=======
                         g->ref_row_invalid = TTRUE;
->>>>>>> rf/master
                     }
                 }
                 goto bail_out;
                 break;
 
             default:
-<<<<<<< HEAD
-                assert (FALSE);
-=======
                 assert (TFALSE);
->>>>>>> rf/master
 
         } /* end of switch to handle unusual condition */
     } /* end of while */
@@ -2539,11 +2404,7 @@ static WORD faxDecode_setXformSpec (
 
     HANDLE_TO_PTR (hXform, g);
     g->input_format = (BYTE)aXformInfo[IP_FAX_FORMAT].dword;
-<<<<<<< HEAD
-    g->no_eols      = (BOOL)aXformInfo[IP_FAX_NO_EOLS].dword;
-=======
     g->no_eols      = (TBOOL)aXformInfo[IP_FAX_NO_EOLS].dword;
->>>>>>> rf/master
     return IP_DONE;
 
     fatal_error:
@@ -2696,11 +2557,7 @@ static WORD faxDecode_convert (
 
     if (g->flushing_to_eol) {
         ret_val = bits_flush_to_eol(g, g->got_fill,
-<<<<<<< HEAD
-                                    (BOOL)(g->input_format==IP_FAX_MR))
-=======
                                     (TBOOL)(g->input_format==IP_FAX_MR))
->>>>>>> rf/master
                   ? DECODE_HIT_EOL : 0;
     } else {
         if (g->two_dim) ret_val = decode_row_2d(g, g->prior_p, pbOutputBuf);
@@ -2711,19 +2568,11 @@ static WORD faxDecode_convert (
     if (ret_val & IP_INPUT_ERROR) {
         if (g->input_format == IP_FAX_MMR) {
             bits_flush (g);
-<<<<<<< HEAD
-            g->toss_everything = TRUE;
-            /* This isn't fatal any more. We merely toss all following data */
-            /* ret_val |= IP_INPUT_ERROR; */
-        } else {
-            g->flushing_to_eol = TRUE;
-=======
             g->toss_everything = TTRUE;
             /* This isn't fatal any more. We merely toss all following data */
             /* ret_val |= IP_INPUT_ERROR; */
         } else {
             g->flushing_to_eol = TTRUE;
->>>>>>> rf/master
             g->num_eols = 0;
         }
     }
@@ -2738,13 +2587,8 @@ static WORD faxDecode_convert (
     }
 
     if (ret_val & DECODE_HIT_FILL) {
-<<<<<<< HEAD
-        g->flushing_to_eol = TRUE;
-        g->got_fill = TRUE;
-=======
         g->flushing_to_eol = TTRUE;
         g->got_fill = TTRUE;
->>>>>>> rf/master
     }
 
     if (ret_val & DECODE_HIT_EOL) {
@@ -2756,13 +2600,8 @@ static WORD faxDecode_convert (
         }
 
         decode_row_init (g);
-<<<<<<< HEAD
-        g->flushing_to_eol = FALSE;
-        g->got_fill = FALSE;
-=======
         g->flushing_to_eol = TFALSE;
         g->got_fill = TFALSE;
->>>>>>> rf/master
         g->num_eols += 1;
 
         if (g->num_eols>=EOLS_FOR_MH_MR ||
