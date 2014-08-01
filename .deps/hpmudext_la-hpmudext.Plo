@@ -151,7 +151,7 @@ hpmudext_la-hpmudext.lo .libs/hpmudext_la-hpmudext.o:  \
   /usr/include/sys/_types/_sa_family_t.h \
   /usr/include/sys/_types/_socklen_t.h /usr/include/sys/_types/_iovec_t.h \
   /usr/include/netinet6/in6.h io/hpmud/hpmud.h io/hpmud/musb.h \
-  /opt/local/include/libusb-1.0/libusb.h io/hpmud/hpmudi.h io/hpmud/mlc.h \
+  /usr/include/libusb-1.0/libusb.h io/hpmud/hpmudi.h io/hpmud/mlc.h \
   io/hpmud/dot4.h io/hpmud/pml.h io/hpmud/jd.h /usr/include/netdb.h
 
 /opt/local/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7/Python.h:
@@ -600,7 +600,7 @@ io/hpmud/hpmud.h:
 
 io/hpmud/musb.h:
 
-/opt/local/include/libusb-1.0/libusb.h:
+/usr/include/libusb-1.0/libusb.h:
 
 io/hpmud/hpmudi.h:
 

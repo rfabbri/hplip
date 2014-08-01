@@ -81,7 +81,7 @@ libhpmud_la-model.lo .libs/libhpmud_la-model.o: io/hpmud/model.c \
   /usr/include/sys/_types/_sa_family_t.h \
   /usr/include/sys/_types/_socklen_t.h /usr/include/sys/_types/_iovec_t.h \
   /usr/include/netinet6/in6.h io/hpmud/musb.h \
-  /opt/local/include/libusb-1.0/libusb.h \
+  /usr/include/libusb-1.0/libusb.h \
   /opt/local/lib/llvm-gcc42/gcc/i686-apple-darwin13/4.2.1/include/limits.h \
   /opt/local/lib/llvm-gcc42/gcc/i686-apple-darwin13/4.2.1/include/syslimits.h \
   /usr/include/limits.h /usr/include/machine/limits.h \
@@ -379,7 +379,7 @@ io/hpmud/hpmudi.h:
 
 io/hpmud/musb.h:
 
-/opt/local/include/libusb-1.0/libusb.h:
+/usr/include/libusb-1.0/libusb.h:
 
 /opt/local/lib/llvm-gcc42/gcc/i686-apple-darwin13/4.2.1/include/limits.h:
 
